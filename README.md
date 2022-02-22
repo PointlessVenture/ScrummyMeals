@@ -1,1 +1,3 @@
 # CSI330-AgileProject: Scrummy Meals
+
+## WE DO ***NOT*** USE PHP IN THIS DEVELOPMENT ENVIRONMENT
