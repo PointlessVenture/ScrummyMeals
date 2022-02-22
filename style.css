@@ -1,0 +1,51 @@
+body, html {
+    height: 98vh;
+}
+
+#gameboard {
+    display: flex;
+    flex-direction: row;
+}
+
+#left, #right, #middle {
+    display: flex;
+    height: 98vh;
+    flex-direction: column;
+}
+
+#left, #right {
+    flex-grow: 1;
+}
+
+#right {
+    width: 10vh;
+}
+
+#left {
+    width: 30vh;
+    border: 2px solid red;
+}
+
+#middle {
+    border: 2px solid green;
+    width: 40vh;
+    flex-grow: 2;
+    background-image: url("room.jpg");
+}
+
+#right {
+    border: 2px solid blue;
+}
+
+#topic , #buttons, #stats, #previous{
+    border: 1px solid orange;
+    padding: 3vh;
+    height: 48vh;
+}
+
+#textBox {
+    height: 50%;
+    padding: 3vh;
+    border: 2px solid white;
+    background-color: white;
+}
