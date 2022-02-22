@@ -1,1 +1,1 @@
-# CSI330-AgileProject
+# CSI330-AgileProject: Scrummy Meals
