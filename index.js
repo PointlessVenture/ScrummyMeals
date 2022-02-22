@@ -1,19 +1,19 @@
 
-class resources
+export class resources
 {
-    StudentHappiness = 0;
-    StudentSanity = 0;
-    StudentEngagement = 0;
+    StudentHappiness = 50;
+    StudentSanity = 50;
+    StudentEngagement = 50;
 
-    TeacherHappiness = 0;
-    TeacherSanity = 0;
-    TeacherEngagement = 0;
+    TeacherHappiness = 50;
+    TeacherSanity = 50;
+    TeacherEngagement = 50;
 
-    KnowledgeImparted = 0;
+    KnowledgeImparted = 50;
     BloodAlchoholContent = 0;
 }
 
-class Character {
+export class Character {
     constructor(name, studentHappyOffset = 1, studentEngageOffset = 1, studentSanityOffset = 1, profHappyOffset = 1, profEngageOffset = 1, profSanityOffset = 1) {
         this.name = name;
         this.studentHappyOffset = studentHappyOffset;
