@@ -9,22 +9,30 @@
   </head>
   <body>
 	<script src="index.js"></script>
+    <script>
+        
+    </script>
 
     <div id="gameboard">
         <div id="left">
             <div id="topic">
-                <p>Display lecture topics here</p>
+                <p>Display lecture topics/whats going on here.</p>
             </div>
             <div id="buttons">
-                <p>Loop through actions to make buttons</p>
+                <button onClick=handleAction(berate)>Berate Students</button>
+                <button onClick=handleAction(readSlides)>Read Slides</button>
+                <button onClick=handleAction(explain)>Explain Slides</button>
             </div>
         </div>
         <div id="middle">
-            <div id="textBox">text goes here</div>
+            <div id="textBox">
+                <p>Here is where the description of how your action went will go.</p>
+
+            </div>
         </div>
         <div id="right">
-            <div id="stats">
-                <button onclick=loadStats()>Click to load stats</button>
+            <p><strong>STATS:</strong></p>
+            <div id="stats" onload="loadStats">
             </div>
             <div id="previous">
                 <p>Display previous actions here</p>
