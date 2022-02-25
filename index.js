@@ -15,10 +15,11 @@ class resources
     }
 }
 
+//delete this later i beg
 let gameStats = new resources(50);
 
-class Character {
-    constructor(name, studentHappyOffset = 1, studentEngageOffset = 1, studentSanityOffset = 1, profHappyOffset = 1, profEngageOffset = 1, profSanityOffset = 1) {
+export class Character {
+    constructor(name, studentHappyOffset = 1, studentEngageOffset = 1, studentSanityOffset = 1, profHappyOffset = 1, profEngageOffset = 1, profSanityOffset = 1, knowledgeOffset = 1) {
         this.name = name;
         this.studentHappyOffset = studentHappyOffset;
         this.studentEngageOffset = studentEngageOffset;
@@ -26,6 +27,7 @@ class Character {
         this.profHappyOffset = profHappyOffset;
         this.profEngageOffset = profEngageOffset;
         this.profSanityOffset = profSanityOffset;
+        this.knowledgeOffset = knowledgeOffset;
     }
 }
 
