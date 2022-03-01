@@ -10,6 +10,7 @@
   <body>
 	<script type="module" src="index.js"></script>
     <script type="module" src="./modules/actions.mjs"></script>
+    <script type="module" src="./modules/character.mjs"></script>
 
     <div id="gameboard">
         <div id="left">
@@ -24,7 +25,15 @@
         </div>
         <div id="middle">
             <div id="textBox">
-                <p>Here is where the description of how your action went will go.</p>
+                <p>Choose your professor:</p>
+                <p> </p>
+                <p>Frank Canovatchel</p>
+                <img src="./images/canovatchel_frank.jpg" alt="Frank's photo from Champlain website">
+                <div id="buttons">
+                    <button onClick=handleAction(berate)>Choose Frank</button>
+                </div>
+                
+
 
             </div>
         </div>

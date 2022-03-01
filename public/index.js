@@ -14,11 +14,26 @@ let gameStats = new Resources(50);
 // Example Character
 const frank = new Character("Frank Canovatchel", -1);
 
+//Current Character
+var currentProffessor = frank;
+
 //Handles the onclick events from the button
 const handleAction = (action) => {
-    action(gameStats, frank);
+    action(gameStats, currentProffessor);
     loadStats();
 }
+
+
+function gameloop() {
+    window.requestAnimationFrame(gameloop);
+    updtaeGameLoop();
+}
+
+function updtaeGameLoop(){
+
+
+}
+
 
 //Function to refresh stats
 //kinda janky may find a way to improve later
