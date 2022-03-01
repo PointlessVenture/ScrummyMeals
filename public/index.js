@@ -7,6 +7,7 @@
 
 import Resources from "./modules/resources.mjs"
 import Character from "./modules/character.mjs"
+import { StudentDecentQuestion } from "./modules/scenarios.mjs";
 
 //move both of these to game loop once we finalize it
 //Example gamestats
@@ -18,6 +19,14 @@ const frank = new Character("Frank Canovatchel", -1);
 const handleAction = (action) => {
     action(gameStats, frank);
     loadStats();
+}
+
+const handleScenario = (action) => {
+    action(gameStats, frank)
+    loadStats();
+    //Choose Randomly from the list of Scenarios, eventually.
+    newScenario = StudentDecentQuestion
+    //Get text and available actions.
 }
 
 //Function to refresh stats
@@ -41,3 +50,4 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 window.handleAction = handleAction;
+window.handleScenario = handleScenario;
