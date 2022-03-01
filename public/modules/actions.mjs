@@ -1,24 +1,52 @@
-const berate = (resource, char, multiplier = 1) =>
+
+// Reading Slides
+const readSlides = (resource, char) =>
 {
-    resource.StudentHappiness -= 5 * multiplier * (1 / char.studentHappyOffset);
-    resource.TeacherSanity += 5 * multiplier * char.profSanityOffset;
+    resource.KnowledgeImparted += 10 * char.knowledgeOffset;
+    resource.StudentEngagement -= 5 * (1 / char.studentEngageOffset);
+	resource.TeacherEngagement += 10 * char.profSanityOffset;
+	
 }
 
-const readSlides = (resource, char, multiplier = 1) =>
+const skimSlides = (resource, char) =>
 {
-    resource.KnowledgeImparted += 5 * multiplier * char.knowledgeOffset
-    resource.StudentEngagement -= 2 * multiplier * (1 / char.studentEngageOffset);
+    resource.KnowledgeImparted += 5 * char.knowledgeOffset;
+    resource.StudentEngagement -= 5 * (1 / char.studentEngageOffset);
+	resource.TeacherHappiness += 10 * char.profHappyOffset;
 }
 
-const explain = (resource, char, multiplier = 1) =>
+const explainSlides = (resource, char) =>
 {
-    resource.StudentSanity += 5 * multiplier * char.studentSanityOffset;
-    resource.TeacherSanity -= 5 * multiplier * char.profSanityOffset;
-    resource.KnowledgeImparted += 5 * multiplier * char.knowledgeOffset;
+	resource.KnowledgeImparted += 15 * char.knowledgeOffset;
+    resource.StudentEngagement -= 10 * (1 / char.studentEngageOffset);
+	resource.TeacherEngagement -= 5 * (1 / char.profHappyOffset);
 }
 
-export {berate, readSlides, explain}
+
+// Student Responses
+const explain = (resource, char) =>
+{
+    resource.StudentSanity += 10  * char.studentSanityOffset;
+    resource.TeacherEngagement -= 5  * char.profEngageOffset;
+    resource.KnowledgeImparted += 5  * char.knowledgeOffset;
+}
+
+const berate = (resource, char) =>
+{
+    resource.StudentHappiness -= 5  * (1 / char.studentHappyOffset);
+    resource.TeacherSanity += 10  * char.profSanityOffset;
+}
+
+const reiterate = (resource, char) =>
+{
+	resource.StudentEngagement += 10 * char.studentEngageOffset;
+	resource.TeacherSanity -= 5  * (1 / char.profSanityOffset);
+    resource.KnowledgeImparted += 5  * char.knowledgeOffset;
+}
+
+export {berate, readSlides, skimSlides, explain}
 
 window.berate = berate;
 window.readSlides = readSlides;
+window.skimSlides = skimSlides;
 window.explain = explain;
