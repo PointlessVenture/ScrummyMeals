@@ -11,8 +11,16 @@ import Character from "./modules/character.mjs"
 //move both of these to game loop once we finalize it
 //Example gamestats
 let gameStats = new Resources(50);
-// Example Character
-const frank = new Character("Frank Canovatchel", -1);
+// Character Choices
+const frank = new Character("Frank Canovatchel", "Blunt Delivery", -1);
+const brian = new Character("Brian Hall", "Hard but fun", 1.2, 1, 0.8);
+const david = new Character("David Kopec", "Generalist", 1.1, 1.1, 1.1);
+const murat = new Character("Murat Gungor", "MiC 308", 1.5, 0.5);
+const dean = new Character("Dean Lawson", "Unexplained", 1.2, 1.2, 0.5);
+const chris = new Character("Chris Bendel", "Gamer-speak", 1.5, -0.8);
+const brent = new Character("Brent Sitterly", "Oblivious", 0.5, 0.5, 0.5, 2.0, 2.0, 2.0);
+const wei = new Character("Wei Chen", "Coding Standard", 1, 1.5, 0.5);
+const warren = new Character("Warren Sides", "Math!", 1, 1, 1.5, 1, 1, 1, 0.75);
 
 //Handles the onclick events from the button
 const handleAction = (action) => {
