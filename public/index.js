@@ -31,17 +31,10 @@ const handleAction = (action) => {
     loadStats();
 }
 
-
-function gameloop() {
-    window.requestAnimationFrame(gameloop);
-    updateGameLoop();
-}
-
-function updateGameLoop(){
+const changeProffessor = (action) => {
+    action(gameStats, currentProffessor)
     
-
 }
-
 
 //Function to refresh stats
 //kinda janky may find a way to improve later
