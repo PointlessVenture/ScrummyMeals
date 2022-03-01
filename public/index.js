@@ -26,11 +26,11 @@ const handleAction = (action) => {
 
 function gameloop() {
     window.requestAnimationFrame(gameloop);
-    updtaeGameLoop();
+    updateGameLoop();
 }
 
-function updtaeGameLoop(){
-
+function updateGameLoop(){
+    
 
 }
 
