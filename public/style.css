@@ -1,5 +1,6 @@
 body, html {
     height: 98vh;
+    background-color: beige;
 }
 
 #gameboard {
@@ -9,43 +10,58 @@ body, html {
 
 #left, #right, #middle {
     display: flex;
-    height: 98vh;
+    height: 95vh;
     flex-direction: column;
 }
 
 #left, #right {
     flex-grow: 1;
+    padding: 0.5vw;
 }
 
 #right {
-    width: 10vh;
+    width: 10vw;
 }
 
 #left {
-    width: 30vh;
-    border: 2px solid red;
+    width: 20vw;
 }
 
 #middle {
-    border: 2px solid green;
-    width: 40vh;
+    padding: 0.5vw;
+    width: 30vw;
     flex-grow: 2;
-    background-image: url("room.jpg");
 }
 
-#right {
-    border: 2px solid blue;
+#leftItems, #middleItems, #rightItems {
+    min-height: 95vh;
+    max-height: 98vh;
+    border: 2px solid black;
+    background-color: #999906;
 }
 
-#topic , #buttons, #stats, #previous{
-    border: 1px solid orange;
+#topic, #buttons, #statbox, #previous{
     padding: 3vh;
-    height: 48vh;
+    height: 40vh;
 }
 
 #textBox {
-    height: 50%;
+    height: 40vh;
     padding: 3vh;
-    border: 2px solid white;
-    background-color: white;
+}
+
+#bgImage {
+    height: 49vh;
+    width: auto;
+    background-image: url("./images/room2.JPG");
+    background-size: 100% 100%;
+}
+
+#topic, #statbox, #textBox {
+    border-bottom: 2px solid black;
+}
+
+.box {
+    border-radius: 5px;
+    padding: 1vh;
 }
