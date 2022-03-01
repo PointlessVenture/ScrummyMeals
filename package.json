@@ -1,0 +1,22 @@
+{
+  "name": "scrummymeals",
+  "version": "1.0.0",
+  "description": "ScrummyMeals Lecture Simulator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PointlessVenture/ScrummyMeals.git"
+  },
+  "author": "Aiden Tracy, Collin Westgate, Louis Vinton, Tyler Sloss",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PointlessVenture/ScrummyMeals/issues"
+  },
+  "homepage": "https://github.com/PointlessVenture/ScrummyMeals#readme",
+  "dependencies": {
+    "http-server": "^14.1.0"
+  }
+}
