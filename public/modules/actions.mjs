@@ -44,6 +44,31 @@ const reiterate = (resource, char) =>
     resource.KnowledgeImparted += 5  * char.knowledgeOffset;
 }
 
+// Lull in class
+
+const readNotes = (resource, char) =>
+{
+    
+}
+
+const helpStudents = (resource, char) =>
+{
+    
+}
+
+const relax = (resource, char) =>
+{
+    resource.TeacherHappiness += 10 * char.profHappyOffset;
+	resource.TeacherSanity += 5 * char.profSanityOffset;
+}
+
+const drink = (resource, char) =>
+{
+    resource.TeacherHappiness += 15 * char.profHappyOffset;
+	resource.TeacherSanity += 10 * char.profSanityOffset;
+	resource.BloodAlchoholContent += 0.04;
+}
+
 export {berate, readSlides, skimSlides, explain}
 
 window.berate = berate;
