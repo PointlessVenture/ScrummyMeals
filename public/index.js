@@ -15,14 +15,14 @@ let gameStats = new Resources(50);
 
 const teachers = [];
 teachers.push(new Character("Frank Canovatchel","./images/canovatchel_frank.jpg",  "Blunt Delivery", -1));
-teachers.push(new Character("Brian Hall","./images/canovatchel_frank.jpg", "Hard but fun", 1.2, 1, 0.8));
-teachers.push(new Character("David Kopec","./images/canovatchel_frank.jpg", "Generalist", 1.1, 1.1, 1.1));
-teachers.push(new Character("Murat Gungor","./images/canovatchel_frank.jpg", "MiC 308", 1.5, 0.5));
-teachers.push(new Character("Dean Lawson","./images/canovatchel_frank.jpg", "Unexplained", 1.2, 1.2, 0.5));
-teachers.push(new Character("Chris Bendel","./images/canovatchel_frank.jpg", "Gamer-speak", 1.5, -0.8));
-teachers.push(new Character("Brent Sitterly","./images/canovatchel_frank.jpg", "Oblivious", 0.5, 0.5, 0.5, 2.0, 2.0, 2.0));
-teachers.push(new Character("Wei Chen","./images/canovatchel_frank.jpg", "Coding Standard", 1, 1.5, 0.5));
-teachers.push(new Character("Warren Sides","./images/canovatchel_frank.jpg", "Math!", 1, 1, 1.5, 1, 1, 1, 0.75));
+teachers.push(new Character("Brian Hall","./images/hall_brian.jpg", "Hard but fun", 1.2, 1, 0.8));
+teachers.push(new Character("David Kopec","./images/DavidKopec.jpg", "Generalist", 1.1, 1.1, 1.1));
+teachers.push(new Character("Murat Gungor","./images/Murat-Gungor-330x330.jpg", "MiC 308", 1.5, 0.5));
+teachers.push(new Character("Dean Lawson","./images/lawson_dean.jpg", "Unexplained", 1.2, 1.2, 0.5));
+teachers.push(new Character("Chris Bendel","./images/Chris_Bendel.jfif", "Gamer-speak", 1.5, -0.8));
+teachers.push(new Character("Brent Sitterly","./images/Brent_Sitterly.jfif", "Oblivious", 0.5, 0.5, 0.5, 2.0, 2.0, 2.0));
+teachers.push(new Character("Wei Chen","./images/chen_wei.jpg", "Coding Standard", 1, 1.5, 0.5));
+teachers.push(new Character("Warren Sides","./images/WarrenSides.jpg", "Math!", 1, 1, 1.5, 1, 1, 1, 0.75));
 
 //Current Character
 var currentProffessor = teachers[1];
