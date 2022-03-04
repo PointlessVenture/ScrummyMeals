@@ -69,6 +69,7 @@ const drink = (resource, char) =>
     resource.TeacherHappiness += 15 * char.profHappyOffset;
 	resource.TeacherSanity += 10 * char.profSanityOffset;
 	resource.BloodAlchoholContent += 0.04;
+	resource.StudentEngagement += 5 * char.studentEngageOffset;
 }
 
 
