@@ -12,18 +12,20 @@ import Character from "./modules/character.mjs"
 //Example gamestats
 let gameStats = new Resources(50);
 // Character Choices
-const frank = new Character("Frank Canovatchel", "Blunt Delivery", -1);
-const brian = new Character("Brian Hall", "Hard but fun", 1.2, 1, 0.8);
-const david = new Character("David Kopec", "Generalist", 1.1, 1.1, 1.1);
-const murat = new Character("Murat Gungor", "MiC 308", 1.5, 0.5);
-const dean = new Character("Dean Lawson", "Unexplained", 1.2, 1.2, 0.5);
-const chris = new Character("Chris Bendel", "Gamer-speak", 1.5, -0.8);
-const brent = new Character("Brent Sitterly", "Oblivious", 0.5, 0.5, 0.5, 2.0, 2.0, 2.0);
-const wei = new Character("Wei Chen", "Coding Standard", 1, 1.5, 0.5);
-const warren = new Character("Warren Sides", "Math!", 1, 1, 1.5, 1, 1, 1, 0.75);
+
+const teachers = [];
+teachers.push(new Character("Frank Canovatchel","./images/canovatchel_frank.jpg",  "Blunt Delivery", -1));
+teachers.push(new Character("Brian Hall","./images/canovatchel_frank.jpg", "Hard but fun", 1.2, 1, 0.8));
+teachers.push(new Character("David Kopec","./images/canovatchel_frank.jpg", "Generalist", 1.1, 1.1, 1.1));
+teachers.push(new Character("Murat Gungor","./images/canovatchel_frank.jpg", "MiC 308", 1.5, 0.5));
+teachers.push(new Character("Dean Lawson","./images/canovatchel_frank.jpg", "Unexplained", 1.2, 1.2, 0.5));
+teachers.push(new Character("Chris Bendel","./images/canovatchel_frank.jpg", "Gamer-speak", 1.5, -0.8));
+teachers.push(new Character("Brent Sitterly","./images/canovatchel_frank.jpg", "Oblivious", 0.5, 0.5, 0.5, 2.0, 2.0, 2.0));
+teachers.push(new Character("Wei Chen","./images/canovatchel_frank.jpg", "Coding Standard", 1, 1.5, 0.5));
+teachers.push(new Character("Warren Sides","./images/canovatchel_frank.jpg", "Math!", 1, 1, 1.5, 1, 1, 1, 0.75));
 
 //Current Character
-var currentProffessor = frank;
+var currentProffessor = teachers[1];
 
 //Handles the onclick events from the button
 const handleAction = (action) => {
@@ -51,9 +53,25 @@ const loadStats = () => {
         + "<p id='BAC'>BAC = " + gameStats.BloodAlchoholContent + "</p>";
 }
 
+const loadTeachers = () => {
+    let textbox = document.getElementById('textBox');
+
+    var children = "<link rel='stylesheet' href='chooseProfessor.css'>";
+
+    for(let teacher of teachers) {
+        children += "<div class='professorImages'><p>" 
+        + teacher.name + "</p><img src='" + teacher.image 
+        + "' alt='" + teacher.abilityName + "'></div>"
+    }
+
+    textbox.innerHTML = children;
+}
+
+
 //loads stats when page loads
 window.addEventListener('DOMContentLoaded', (event) => {
     loadStats();
+    loadTeachers();
 });
 
 window.handleAction = handleAction; 
