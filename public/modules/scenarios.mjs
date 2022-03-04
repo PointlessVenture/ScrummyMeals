@@ -29,12 +29,11 @@ OptionOutput2 = "You berate the student, in a sarcastic, yet slightly charming w
 OptionOutput3 = "You berate the student in a way that gives the vibe that you aren't upset, just really, really dissapointed."
 Option1Outputs = [OptionOutput1, OptionOutput2, OptionOutput3]
 OptionOutput1 = "You go back a few slides to re-read a portion from earlier, answering the student's question."
-OptionOutput2 = "You go back a few slides to re-read a portion from earlier, answering the student's question."
-OptionOutput3 = "You go back a few slides to re-read a portion from earlier, answering the student's question."
-Option2Outputs = [OptionOutput1, OptionOutput2, OptionOutput3]
+OptionOutput2 = "You explain, carefully, that you'll get to that in a moment. As you read, the student's question is handly answered."
+Option2Outputs = [OptionOutput1, OptionOutput2]
 OptionOutput1 = "You take the time to explain the answer to the question and make sure the class is on the same page."
-OptionOutput2 = "You take the time to explain the answer to the question and make sure the class is on the same page."
-OptionOutput3 = "You take the time to explain the answer to the question and make sure the class is on the same page."
+OptionOutput2 = "You explain the answer in great detail. Its probably more detail than your students will ever need, but hey, it's there."
+OptionOutput3 = "You take time to explain that that particular question is beyond the scope of the course, and thus the student will not need to worry about it."
 Option3Outputs = [OptionOutput1, OptionOutput2, OptionOutput3]
 AllOptionOutputs = [Option1Outputs, Option2Outputs, Option3Outputs]
 
