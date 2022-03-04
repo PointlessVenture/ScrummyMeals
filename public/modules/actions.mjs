@@ -93,9 +93,18 @@ const splitClass = (resource, char) =>
 }
 
 
-export {berate, readSlides, skimSlides, explain}
+export {berate, readSlides, skimSlides, explain, explainSlides, reiterate, readNotes, helpStudents, relax, drink, allowAnyone, assignGroups, splitClass}
 
 window.berate = berate;
 window.readSlides = readSlides;
 window.skimSlides = skimSlides;
 window.explain = explain;
+window.explainSlides = explainSlides;
+window.reiterate = reiterate;
+window.readNotes = readNotes;
+window.helpStudents = helpStudents;
+window.relax = relax;
+window.drink = drink;
+window.allowAnyone = allowAnyone;
+window.assignGroups = assignGroups;
+window.splitClass = splitClass;
