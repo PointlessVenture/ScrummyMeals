@@ -65,6 +65,19 @@ const loadTeachers = () => {
     }
 
     textbox.innerHTML = children;
+    loadProffessorButtons();
+}
+
+const loadProffessorButtons = () => {
+    let buttons = document.getElementById("teacherButtons");
+
+    var children = "<link rel='stylesheet' href='teacherButtons.css'>";;
+
+    for(let teacher of teachers) {
+        children += "<button onClick=changeProffessor('" + teacher.name.split(' ')[0] +"')>Choose " + teacher.name + "</button>";
+    }
+
+    buttons.innerHTML=children;
 }
 
 
@@ -75,4 +88,4 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 window.handleAction = handleAction; 
-window.handleAction = changeProffessor;
+window.changeProffessor = changeProffessor;
