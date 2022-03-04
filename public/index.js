@@ -31,9 +31,9 @@ const handleAction = (action) => {
     loadStats();
 }
 
-const changeProffessor = (action) => {
-    action(gameStats, currentProffessor)
-    
+const changeProffessor = (proffessor) => {
+    //action(gameStats, currentProffessor)
+    currentProffessor = proffessor;
 }
 
 //Function to refresh stats
@@ -56,4 +56,5 @@ window.addEventListener('DOMContentLoaded', (event) => {
     loadStats();
 });
 
-window.handleAction = handleAction;
+window.handleAction = handleAction; 
+window.handleAction = changeProffessor;

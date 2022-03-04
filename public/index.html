@@ -25,21 +25,66 @@
         </div>
         <div id="middle">
             <div id="textBox">
-                <p>Choose your professor:</p>
-                <p> </p>
-                <p>Frank Canovatchel</p>
-                <img src="./images/canovatchel_frank.jpg" alt="Blunt Devivery">
-                <div id="buttons">
-                    <button onClick=handleAction(berate)>Choose Frank</button>
+                <p id="chooseProfessor">Choose your professor:</p>
+                <div class="professorImages"> 
+                    <p>Frank Canovatchel</p>
+                    <img src="./images/canovatchel_frank.jpg" alt="Blunt Devivery">
                 </div>
-                <p>Brian Hall</p>
-                <img src="./images/canovatchel_frank.jpg" alt="Hard but fun">
-                <div id="buttons">
-                    <button onClick=handleAction(berate)>Choose Frank</button>
+
+                <div class="professorImages">
+                    <p>Brian Hall</p>
+                    <img src="./images/canovatchel_frank.jpg" alt="Hard but fun">
                 </div>
                 
+                <div class="professorImages">
+                    <p>David Kopec</p>
+                    <img src="./images/canovatchel_frank.jpg" alt="Hard but fun">
+                </div>
+                
+                <div class="professorImages">
+                    <p>Murat Gungor</p>
+                    <img src="./images/canovatchel_frank.jpg" alt="Hard but fun">
+                </div>
+                
+                <!-- <p> </p> -->
+                <div class="professorImages">
+                    <p>Dean Lawson</p>
+                    <img src="./images/canovatchel_frank.jpg" alt="Hard but fun">
+                </div>
 
+                <div class="professorImages">
+                    <p id="professorImages">Chris Bendel</p>
+                    <img id="professorImages" src="./images/canovatchel_frank.jpg" alt="Hard but fun">
+                </div>
 
+                <div class="professorImages">
+                    <p id="professorImages">Brent Sitterly</p>
+                    <img id="professorImages" src="./images/canovatchel_frank.jpg" alt="Hard but fun">
+                </div>
+
+                <div class="professorImages">
+                    <p id="professorImages">Wei Chen</p>
+                    <img id="professorImages" src="./images/canovatchel_frank.jpg" alt="Hard but fun">
+                </div>
+
+                <div class="professorImages">
+                    <p id="professorImages">Warren Sides</p>
+                    <img id="professorImages" src="./images/canovatchel_frank.jpg" alt="Hard but fun"> 
+                </div>
+
+                
+            </div>
+            <div id="buttons">
+                <button onClick=changeProfessor(frank)>Choose Frank</button>
+                <button onClick=changeProfessor(brain)>Choose Brian</button>
+                <button onClick=changeProfessor(david)>Choose David</button>
+                <button onClick=changeProfessor(murat)>Choose Murat</button>
+                <button onClick=changeProfessor(dean)>Choose Dean</button>
+                <button onClick=changeProfessor(chris)>Choose Chris</button>
+                <button onClick=changeProfessor(brent)>Choose Brent</button>
+                <button onClick=changeProfessor(wei)>Choose Wei</button>
+                <button onClick=changeProfessor(warren)>Choose Warren</button>
+                
             </div>
         </div>
         <div id="right">

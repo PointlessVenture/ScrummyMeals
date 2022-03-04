@@ -48,4 +48,22 @@ body, html {
     padding: 3vh;
     border: 2px solid white;
     background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#chooseProfessor {
+    text-align: center;
+    border: 1px solid black;
+    width: 100%;
+}
+
+.professorImages {
+    flex-direction: row;
+    padding: 0.5vw;
+}
+
+.professorImages > img {
+    height: 115px;
+    width: 115px;
 }
