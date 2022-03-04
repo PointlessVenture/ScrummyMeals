@@ -12,11 +12,6 @@ export default class Scenario
 } 
 
 var SceneString;
-var OptionOutput1;
-var OptionOutput2;
-var OptionOutput3;
-var OptionOutput4;
-var OptionOutput5;
 var Options;
 var Option1Outputs;
 var Option2Outputs;
