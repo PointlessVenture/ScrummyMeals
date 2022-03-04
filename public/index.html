@@ -14,13 +14,15 @@
 
     <div id="gameboard">
         <div id="left">
-            <div id="topic">
-                <p>Display lecture topics/whats going on here.</p>
-            </div>
-            <div id="buttons">
-                <button onClick=handleAction(berate)>Berate Students</button>
-                <button onClick=handleAction(readSlides)>Read Slides</button>
-                <button onClick=handleAction(explain)>Explain Slides</button>
+            <div class="box" id="leftItems">
+                <div id="topic">
+                    <p>Display lecture topics/whats going on here.</p>
+                </div>
+                <div id="buttons">
+                    <button onClick=handleAction(berate)>Berate Students</button>
+                    <button onClick=handleAction(readSlides)>Read Slides</button>
+                    <button onClick=handleAction(explain)>Explain Slides</button>
+                </div>
             </div>
         </div>
         <div id="middle">
@@ -28,11 +30,14 @@
             <div id="teacherButtons"></div>
         </div>
         <div id="right">
-            <p><strong>STATS:</strong></p>
-            <div id="stats" onload="loadStats">
-            </div>
-            <div id="previous">
-                <p>Display previous actions here</p>
+            <div class="box" id="rightItems">
+                <div id="statbox">
+                    <p ><strong>STATS:</strong></p>
+                    <div id="stats">
+                </div>
+                <div id="previous">
+                    <p>Display previous actions here</p>
+                </div>
             </div>
         </div>
     </div>
