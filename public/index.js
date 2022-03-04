@@ -40,6 +40,7 @@ const handleScenario = (action) => {
     //Choose Randomly from the list of Scenarios, eventually.
     newScenario = StudentDecentQuestion
     //Get text and available actions.
+}
 
 const changeProffessor = (proffessor) => {
     //action(gameStats, currentProffessor)
@@ -73,6 +74,19 @@ const loadTeachers = () => {
     }
 
     textbox.innerHTML = children;
+    loadProffessorButtons();
+}
+
+const loadProffessorButtons = () => {
+    let buttons = document.getElementById("teacherButtons");
+
+    var children = "<link rel='stylesheet' href='teacherButtons.css'>";;
+
+    for(let teacher of teachers) {
+        children += "<button onClick=changeProffessor('" + teacher.name.split(' ')[0] +"')>Choose " + teacher.name + "</button>";
+    }
+
+    buttons.innerHTML=children;
 }
 
 

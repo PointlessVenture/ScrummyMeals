@@ -1,6 +1,3 @@
-import Resources from "resources.mjs"
-import Character from "character.mjs"
-
 export default class Scenario
 {
     constructor(Scene, Options, OptionOutputs)
@@ -34,7 +31,7 @@ Option3Outputs = [
 "You take time to explain that that particular question is beyond the scope of the course, and thus the student will not need to worry about it."]
 AllOptionOutputs = [Option1Outputs, Option2Outputs, Option3Outputs]
 
-StudentDecentQuestion = new Scenario(SceneString, Options, AllOptionOutputs)
+const StudentDecentQuestion = new Scenario(SceneString, Options, AllOptionOutputs)
 
 SceneString = "Your lecture is going off without a hitch. Seems like a good chance to impart some more knowledge."
 Options =  ["readSlides", "explainSlides", "skimSlides"]
@@ -52,7 +49,7 @@ Option3Outputs = [
 "You go through the slides quickly, telling students on the essentials that they need."]
 AllOptionOutputs = [Option1Outputs, Option2Outputs, Option3Outputs]
 
-StandardLecture = new Scenario(SceneString, Options, AllOptionOutputs)
+const StandardLecture = new Scenario(SceneString, Options, AllOptionOutputs)
 
 SceneString = "You've got a spare moment while the students catch up. Time for a break."
 Options =  ["readNotes", "relax", "drink"]
@@ -71,6 +68,6 @@ Option3Outputs = [
 "You pop the top off of the Starbucks you had brought earlier, and somewhat discreetly, add a dash of Bailey's, just to spice it up.",
 "You reach under your desk and produce, from the cooler you stashed under there, a Whiteclaw. You pop the top and chug the whole beverage in a single gulp. The class applauds."]
 AllOptionOutputs = [Option1Outputs, Option2Outputs, Option3Outputs]
-LullMoment = new Scenario(SceneString, Options, AllOptionOutputs)
+const LullMoment = new Scenario(SceneString, Options, AllOptionOutputs)
 
 export {StudentDecentQuestion, StandardLecture, LullMoment}
