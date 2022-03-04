@@ -23,7 +23,7 @@ const explainSlides = (resource, char) =>
 }
 
 
-// Student Responses
+// Student Question
 const explain = (resource, char) =>
 {
     resource.StudentSanity += 10  * char.studentSanityOffset;
@@ -44,9 +44,68 @@ const reiterate = (resource, char) =>
     resource.KnowledgeImparted += 5  * char.knowledgeOffset;
 }
 
-export {berate, readSlides, skimSlides, explain}
+// Lull in class
+
+const readNotes = (resource, char) =>
+{
+    resource.TeacherEngagement += 10 * char.profEngageOffset;
+	resource.TeacherHappiness -= 5 * (1 / char.profHappyOffset);
+}
+
+const helpStudents = (resource, char) =>
+{
+    resource.StudentHappiness += 5 * char.studentHappyOffset;
+	resource.StudentSanity += 10 * char.studentSanityOffset;
+}
+
+const relax = (resource, char) =>
+{
+    resource.TeacherHappiness += 10 * char.profHappyOffset;
+	resource.TeacherSanity += 5 * char.profSanityOffset;
+}
+
+const drink = (resource, char) =>
+{
+    resource.TeacherHappiness += 15 * char.profHappyOffset;
+	resource.TeacherSanity += 10 * char.profSanityOffset;
+	resource.BloodAlchoholContent += 0.04;
+	resource.StudentEngagement += 5 * char.studentEngageOffset;
+}
+
+
+// Set up groups
+const allowAnyone = (resource, char) =>
+{
+	resource.StudentHappiness += 10 * char.studentHappyOffset;
+	resource.StudentEngagement -= 5 * (1 / char.studentEngageOffset);
+}
+
+const assignGroups = (resource, char) =>
+{
+	resource.StudentEngagement += 5 * char.studentHappyOffset;
+	resource.studentSanityOffset -= 5 * (1 / char.studentEngageOffset);
+}
+
+const splitClass = (resource, char) =>
+{
+	resource.StudentHappiness += 5 * char.studentHappyOffset;
+	resource.StudentEngagement -= 10 * (1 / char.studentEngageOffset);
+	resource.StudentSanity += 5 * char.studentSanityOffset;
+}
+
+
+export {berate, readSlides, skimSlides, explain, explainSlides, reiterate, readNotes, helpStudents, relax, drink, allowAnyone, assignGroups, splitClass}
 
 window.berate = berate;
 window.readSlides = readSlides;
 window.skimSlides = skimSlides;
 window.explain = explain;
+window.explainSlides = explainSlides;
+window.reiterate = reiterate;
+window.readNotes = readNotes;
+window.helpStudents = helpStudents;
+window.relax = relax;
+window.drink = drink;
+window.allowAnyone = allowAnyone;
+window.assignGroups = assignGroups;
+window.splitClass = splitClass;
