@@ -1,10 +1,10 @@
 export default class Scenario
 {
-    constructor(Scene, Options, OptionOutputs)
+    constructor(scene, options, optionOutputs)
     {
-        this.Scene = Scene;
-        this.Options = Options;
-        this.OptionOutputs = OptionOutputs;
+        this.scene = scene;
+        this.options = options;
+        this.optionOutputs = optionOutputs;
     }
 } 
 

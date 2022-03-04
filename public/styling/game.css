@@ -1,0 +1,28 @@
+#middleItems {
+    min-height: 95vh;
+    max-height: 98vh;
+    border: 2px solid black;
+    background-color: #8eb339;
+}
+
+.box {
+    border-radius: 5px;
+    padding: 1vh;
+}
+
+#topTextBox {
+    height: 42vh;
+    padding: 3vh;
+    text-align: center;
+    border-bottom: 2px solid black;
+    background-color: beige;
+    font-size: 2em;
+}
+
+#bgImage {
+    background-image: url("../images/room2.JPG");
+    background-size: 100%;
+    height: 50%;
+    width: 100%;
+
+}

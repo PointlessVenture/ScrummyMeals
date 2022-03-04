@@ -7,13 +7,15 @@
 
 import Resources from "./modules/resources.mjs"
 import Character from "./modules/character.mjs"
-import { StudentDecentQuestion } from "./modules/scenarios.mjs";
+export {berate, readSlides, skimSlides, explain, explainSlides, reiterate, readNotes, helpStudents, relax, 
+    drink, allowAnyone, assignGroups, splitClass} from "./modules/actions.mjs";
+import {StudentDecentQuestion, StandardLecture, LullMoment} from "./modules/scenarios.mjs";
 
-//move both of these to game loop once we finalize it
-//Example gamestats
+
+//Default Gamestate
 let gameStats = new Resources(50);
-// Character Choices
 
+// Character Choices
 const teachers = [];
 teachers.push(new Character("Frank Canovatchel","./images/canovatchel_frank.jpg",  "Blunt Delivery", -1));
 teachers.push(new Character("Brian Hall","./images/hall_brian.jpg", "Hard but fun", 1.2, 1, 0.8));
@@ -25,26 +27,56 @@ teachers.push(new Character("Brent Sitterly","./images/Brent_Sitterly.jfif", "Ob
 teachers.push(new Character("Wei Chen","./images/chen_wei.jpg", "Coding Standard", 1, 1.5, 0.5));
 teachers.push(new Character("Warren Sides","./images/WarrenSides.jpg", "Math!", 1, 1, 1.5, 1, 1, 1, 0.75));
 
+const sceneList = [StudentDecentQuestion, StandardLecture, LullMoment];
+
 //Current Character
-var currentProffessor = teachers[1];
+var currentProffessor;
+
+const getRandomInt = (max) => {
+    return Math.floor(Math.random() * max);
+}
 
 //Handles the onclick events from the button
 const handleAction = (action) => {
     action(gameStats, currentProffessor);
     loadStats();
-}
-
-const handleScenario = (action) => {
-    action(gameStats, frank)
-    loadStats();
-    //Choose Randomly from the list of Scenarios, eventually.
-    newScenario = StudentDecentQuestion
-    //Get text and available actions.
+    SetScene(sceneList[getRandomInt(sceneList.length)])
 }
 
 const changeProffessor = (proffessor) => {
     //action(gameStats, currentProffessor)
     currentProffessor = proffessor;
+    var fname = proffessor.name.split(' ')[0];
+    var lname = proffessor.name.split(' ')[1];
+    document.getElementById("middle").innerHTML = 
+        "<link rel='stylesheet' href='./styling/game.css'>"
+        + `<div class='box' id='middleItems'><div id='topTextBox'><p>Playing as ${fname} "${proffessor.abilityName}" ${lname}</p></div>`
+        + "<div id='bgImage'><button onClick=loadTeachers()>Change Teacher</div></div>"
+
+    //set random scene
+    SetScene();
+}
+
+const SetScene = () => {
+    var randInt = getRandomInt(sceneList.length);
+    var scenario = sceneList[randInt];
+
+    var scene = document.getElementById('topic');
+    var buttons = document.getElementById('buttons');
+    
+    scene.innerHTML = "<p>Scene:</p>" + scenario.scene;
+    buttons.innerHTML = "<p>Actions:</p>";
+    for(let i = 0; i < scenario.options.length; i++) {
+        var option = scenario.options[i];
+        buttons.innerHTML += 
+            `<button onClick=handleAction(${option});handleOutputs(${randInt},${i})>${option}</button>`;
+    }
+}
+
+const handleOutputs = (scene, choice) => {
+    var textBox = document.getElementById("topTextBox");
+    var outputs = sceneList[scene].optionOutputs[choice]
+    textBox.innerHTML = `<p>Playing as ${currentProffessor.name}` + `<p>${outputs[getRandomInt(outputs.length)]}</p>`;
 }
 
 //Function to refresh stats
@@ -52,43 +84,43 @@ const changeProffessor = (proffessor) => {
 const loadStats = () => {
     let stats = document.getElementById("stats");
     stats.innerHTML = 
-          "<p id='sHap'>Student Happiness = " + gameStats.StudentHappiness + "</p>"
-        + "<p id='sSan'>Student Sanity = " + gameStats.StudentSanity + "</p>"
-        + "<p id='sEng'>Student Engagement = " + gameStats.StudentEngagement + "</p>"
-        + "<p id='tHap'>Teacher Happiness = " + gameStats.TeacherHappiness + "</p>"
-        + "<p id='tSan'>Teacher Sanity = " + gameStats.TeacherSanity + "</p>"
-        + "<p id='tEng'>Teacher Engagement = " + gameStats.TeacherEngagement + "</p>"
-        + "<p id='kI'>Knowledge Imparted = " + gameStats.KnowledgeImparted + "</p>"
-        + "<p id='BAC'>BAC = " + gameStats.BloodAlchoholContent + "</p>";
+          "<p id='sHap'>Student Happiness = " + parseFloat(gameStats.StudentHappiness).toFixed(0) + "</p>"
+        + "<p id='sSan'>Student Sanity = " + parseFloat(gameStats.StudentSanity).toFixed(0) + "</p>"
+        + "<p id='sEng'>Student Engagement = " + parseFloat(gameStats.StudentEngagement).toFixed(0) + "</p>"
+        + "<p id='tHap'>Teacher Happiness = " + parseFloat(gameStats.TeacherHappiness).toFixed(0) + "</p>"
+        + "<p id='tSan'>Teacher Sanity = " + parseFloat(gameStats.TeacherSanity).toFixed(0) + "</p>"
+        + "<p id='tEng'>Teacher Engagement = " + parseFloat(gameStats.TeacherEngagement).toFixed(0) + "</p>"
+        + "<p id='kI'>Knowledge Imparted = " + parseFloat(gameStats.KnowledgeImparted).toFixed(0) + "</p>"
+        + "<p id='BAC'>BAC = " + parseFloat(gameStats.BloodAlchoholContent).toFixed(2) + "</p>";
 }
 
 const loadTeachers = () => {
-    let textbox = document.getElementById('textBox');
-
-    var children = "<link rel='stylesheet' href='chooseProfessor.css'>";
-
-    for(let teacher of teachers) {
-        children += "<div class='professorImages'><p>" 
-        + teacher.name + "</p><img src='" + teacher.image 
-        + "' alt='" + teacher.abilityName + "'></div>"
-    }
-
-    textbox.innerHTML = children;
-    loadProffessorButtons();
-}
-
-const loadProffessorButtons = () => {
-    let buttons = document.getElementById("teacherButtons");
-
-    var children = "<link rel='stylesheet' href='teacherButtons.css'>";;
+    let textbox = document.getElementById("topTextBox");
+    textbox.innerHTML = "";
+    
+    var stylesheet = document.createElement('link');
+    stylesheet.setAttribute('rel', 'stylesheet');
+    stylesheet.setAttribute('href', './styling/chooseProfessor.css')
+    textbox.prepend(stylesheet);
 
     for(let teacher of teachers) {
-        children += "<button onClick=changeProffessor('" + teacher.name.split(' ')[0] +"')>Choose " + teacher.name + "</button>";
+        var fName = teacher.name.split(' ')[0];
+        var lName = teacher.name.split(' ')[1];
+        
+        var object = document.createElement("div");
+        object.setAttribute('class', 'professorImages');
+
+        object.innerHTML ="<p>" + fName + ' "' + teacher.abilityName + '" ' + lName 
+        + "</p><img src='" + teacher.image 
+        + "' alt='" + teacher.abilityName + "'>" + "</div>";
+
+        object.onclick = function () {
+            changeProffessor(teacher);
+        }
+
+        textbox.append(object);
     }
-
-    buttons.innerHTML=children;
 }
-
 
 //loads stats when page loads
 window.addEventListener('DOMContentLoaded', (event) => {
@@ -97,5 +129,5 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 window.handleAction = handleAction;
-window.handleScenario = handleScenario;
-window.changeProffessor = changeProffessor;
+window.handleOutputs = handleOutputs;
+window.loadTeachers = loadTeachers;
