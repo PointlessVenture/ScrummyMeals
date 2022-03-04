@@ -23,7 +23,7 @@ const explainSlides = (resource, char) =>
 }
 
 
-// Student Responses
+// Student Question
 const explain = (resource, char) =>
 {
     resource.StudentSanity += 10  * char.studentSanityOffset;
@@ -43,6 +43,55 @@ const reiterate = (resource, char) =>
 	resource.TeacherSanity -= 5  * (1 / char.profSanityOffset);
     resource.KnowledgeImparted += 5  * char.knowledgeOffset;
 }
+
+// Lull in class
+
+const readNotes = (resource, char) =>
+{
+    resource.TeacherEngagement += 10 * char.profEngageOffset;
+	resource.TeacherHappiness -= 5 * (1 / char.profHappyOffset);
+}
+
+const helpStudents = (resource, char) =>
+{
+    resource.StudentHappiness += 5 * char.studentHappyOffset;
+	resource.StudentSanity += 10 * char.studentSanityOffset;
+}
+
+const relax = (resource, char) =>
+{
+    resource.TeacherHappiness += 10 * char.profHappyOffset;
+	resource.TeacherSanity += 5 * char.profSanityOffset;
+}
+
+const drink = (resource, char) =>
+{
+    resource.TeacherHappiness += 15 * char.profHappyOffset;
+	resource.TeacherSanity += 10 * char.profSanityOffset;
+	resource.BloodAlchoholContent += 0.04;
+}
+
+
+// Set up groups
+const allowAnyone = (resource, char) =>
+{
+	resource.StudentHappiness += 10 * char.studentHappyOffset;
+	resource.StudentEngagement -= 5 * (1 / char.studentEngageOffset);
+}
+
+const assignGroups = (resource, char) =>
+{
+	resource.StudentEngagement += 5 * char.studentHappyOffset;
+	resource.studentSanityOffset -= 5 * (1 / char.studentEngageOffset);
+}
+
+const splitClass = (resource, char) =>
+{
+	resource.StudentHappiness += 5 * char.studentHappyOffset;
+	resource.StudentEngagement -= 10 * (1 / char.studentEngageOffset);
+	resource.StudentSanity += 5 * char.studentSanityOffset;
+}
+
 
 export {berate, readSlides, skimSlides, explain}
 
