@@ -13,19 +13,24 @@ import { StudentDecentQuestion } from "./modules/scenarios.mjs";
 //Example gamestats
 let gameStats = new Resources(50);
 // Character Choices
-const frank = new Character("Frank Canovatchel", "Blunt Delivery", -1);
-const brian = new Character("Brian Hall", "Hard but fun", 1.2, 1, 0.8);
-const david = new Character("David Kopec", "Generalist", 1.1, 1.1, 1.1);
-const murat = new Character("Murat Gungor", "MiC 308", 1.5, 0.5);
-const dean = new Character("Dean Lawson", "Unexplained", 1.2, 1.2, 0.5);
-const chris = new Character("Chris Bendel", "Gamer-speak", 1.5, -0.8);
-const brent = new Character("Brent Sitterly", "Oblivious", 0.5, 0.5, 0.5, 2.0, 2.0, 2.0);
-const wei = new Character("Wei Chen", "Coding Standard", 1, 1.5, 0.5);
-const warren = new Character("Warren Sides", "Math!", 1, 1, 1.5, 1, 1, 1, 0.75);
+
+const teachers = [];
+teachers.push(new Character("Frank Canovatchel","./images/canovatchel_frank.jpg",  "Blunt Delivery", -1));
+teachers.push(new Character("Brian Hall","./images/hall_brian.jpg", "Hard but fun", 1.2, 1, 0.8));
+teachers.push(new Character("David Kopec","./images/DavidKopec.jpg", "Generalist", 1.1, 1.1, 1.1));
+teachers.push(new Character("Murat Gungor","./images/Murat-Gungor-330x330.jpg", "MiC 308", 1.5, 0.5));
+teachers.push(new Character("Dean Lawson","./images/lawson_dean.jpg", "Unexplained", 1.2, 1.2, 0.5));
+teachers.push(new Character("Chris Bendel","./images/Chris_Bendel.jfif", "Gamer-speak", 1.5, -0.8));
+teachers.push(new Character("Brent Sitterly","./images/Brent_Sitterly.jfif", "Oblivious", 0.5, 0.5, 0.5, 2.0, 2.0, 2.0));
+teachers.push(new Character("Wei Chen","./images/chen_wei.jpg", "Coding Standard", 1, 1.5, 0.5));
+teachers.push(new Character("Warren Sides","./images/WarrenSides.jpg", "Math!", 1, 1, 1.5, 1, 1, 1, 0.75));
+
+//Current Character
+var currentProffessor = teachers[1];
 
 //Handles the onclick events from the button
 const handleAction = (action) => {
-    action(gameStats, frank);
+    action(gameStats, currentProffessor);
     loadStats();
 }
 
@@ -35,6 +40,10 @@ const handleScenario = (action) => {
     //Choose Randomly from the list of Scenarios, eventually.
     newScenario = StudentDecentQuestion
     //Get text and available actions.
+
+const changeProffessor = (proffessor) => {
+    //action(gameStats, currentProffessor)
+    currentProffessor = proffessor;
 }
 
 //Function to refresh stats
@@ -52,10 +61,27 @@ const loadStats = () => {
         + "<p id='BAC'>BAC = " + gameStats.BloodAlchoholContent + "</p>";
 }
 
+const loadTeachers = () => {
+    let textbox = document.getElementById('textBox');
+
+    var children = "<link rel='stylesheet' href='chooseProfessor.css'>";
+
+    for(let teacher of teachers) {
+        children += "<div class='professorImages'><p>" 
+        + teacher.name + "</p><img src='" + teacher.image 
+        + "' alt='" + teacher.abilityName + "'></div>"
+    }
+
+    textbox.innerHTML = children;
+}
+
+
 //loads stats when page loads
 window.addEventListener('DOMContentLoaded', (event) => {
     loadStats();
+    loadTeachers();
 });
 
 window.handleAction = handleAction;
 window.handleScenario = handleScenario;
+window.changeProffessor = changeProffessor;

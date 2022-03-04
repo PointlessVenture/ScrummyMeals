@@ -10,6 +10,7 @@
   <body>
 	<script type="module" src="index.js"></script>
     <script type="module" src="./modules/actions.mjs"></script>
+    <script type="module" src="./modules/character.mjs"></script>
 
     <div id="gameboard">
         <div id="left">
@@ -25,12 +26,8 @@
             </div>
         </div>
         <div id="middle">
-            <div class="box" id="middleItems">
-                <div id="textBox">
-                    <p>Here is where the description of how your action went will go.</p>
-                </div>
-                <div id="bgImage"></div>
-            </div>
+            <div id="textBox"></div>
+            <div id="teacherButtons"></div>
         </div>
         <div id="right">
             <div class="box" id="rightItems">
