@@ -45,6 +45,7 @@ body, html {
     height: 46.5%;
     overflow: auto;
     background-color: beige;
+
 }
 
 #topTextBox {
@@ -75,4 +76,14 @@ body, html {
 
 #previous {
     vertical-align: text-bottom;
+}
+
+#topic, #statbox {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#previous, #buttons {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }

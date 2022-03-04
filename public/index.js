@@ -31,6 +31,8 @@ const sceneList = [StudentDecentQuestion, StandardLecture, LullMoment];
 
 //Current Character
 var currentProffessor;
+var fname;
+var lname;
 
 const getRandomInt = (max) => {
     return Math.floor(Math.random() * max);
@@ -46,8 +48,8 @@ const handleAction = (action) => {
 const changeProffessor = (proffessor) => {
     //action(gameStats, currentProffessor)
     currentProffessor = proffessor;
-    var fname = proffessor.name.split(' ')[0];
-    var lname = proffessor.name.split(' ')[1];
+    fname = proffessor.name.split(' ')[0];
+    lname = proffessor.name.split(' ')[1];
     document.getElementById("middle").innerHTML = 
         "<link rel='stylesheet' href='./styling/game.css'>"
         + `<div class='box' id='middleItems'><div id='topTextBox'><p>Playing as ${fname} "${proffessor.abilityName}" ${lname}</p></div>`
@@ -76,7 +78,7 @@ const SetScene = () => {
 const handleOutputs = (scene, choice) => {
     var textBox = document.getElementById("topTextBox");
     var outputs = sceneList[scene].optionOutputs[choice]
-    textBox.innerHTML = `<p>Playing as ${currentProffessor.name}` + `<p>${outputs[getRandomInt(outputs.length)]}</p>`;
+    textBox.innerHTML = `<p>Playing as ${fname} "${currentProffessor.abilityName}" ${lname}` + `<p>${outputs[getRandomInt(outputs.length)]}</p>`;
 }
 
 //Function to refresh stats
@@ -103,16 +105,15 @@ const loadTeachers = () => {
     stylesheet.setAttribute('href', './styling/chooseProfessor.css')
     textbox.prepend(stylesheet);
 
-    for(let teacher of teachers) {
+    for(let teacher of teachers) {        
         var fName = teacher.name.split(' ')[0];
         var lName = teacher.name.split(' ')[1];
         
         var object = document.createElement("div");
         object.setAttribute('class', 'professorImages');
 
-        object.innerHTML ="<p>" + fName + ' "' + teacher.abilityName + '" ' + lName 
-        + "</p><img src='" + teacher.image 
-        + "' alt='" + teacher.abilityName + "'>" + "</div>";
+        object.innerHTML =`<p>${fName} "${teacher.abilityName}" ${lName}` 
+        + `</p><img src="${teacher.image }" alt="${teacher.abilityName}"></div>`;
 
         object.onclick = function () {
             changeProffessor(teacher);
