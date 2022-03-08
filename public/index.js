@@ -123,6 +123,43 @@ const loadTeachers = () => {
     }
 }
 
+const loadTeacherStats = () => {
+    let textbox = document.getElementById("teacherStatsTop");
+    textbox.innerHTML = "Current Professor";
+    
+    var stylesheet = document.createElement('link');
+    stylesheet.setAttribute('rel', 'stylesheet');
+    stylesheet.setAttribute('href', './styling/chooseProfessor.css')
+    textbox.prepend(stylesheet);
+
+    var fName = currentProffessor.name.split(' ');
+    var lName = currentProffessor.name.split(' ');
+    
+    var object = document.createElement("div");
+    object.setAttribute('class', 'professorImages');
+
+    object.innerHTML =`<p>${fName} "${currentProffessor.abilityName}" ${lName}` 
+    + `</p><img src="${teacher.image }" alt="${currentProffessor.abilityName}"></div>`;
+
+    var object2 = document.createElement("div");
+
+
+  
+    object2.innerHTML = 
+          "<p id='sHap'>Student Happiness = " + parseFloat(gameStats.StudentHappiness).toFixed(0) + "</p>"
+        + "<p id='sSan'>Student Sanity = " + parseFloat(gameStats.StudentSanity).toFixed(0) + "</p>"
+        + "<p id='sEng'>Student Engagement = " + parseFloat(gameStats.StudentEngagement).toFixed(0) + "</p>"
+        + "<p id='tHap'>Teacher Happiness = " + parseFloat(gameStats.TeacherHappiness).toFixed(0) + "</p>"
+        + "<p id='tSan'>Teacher Sanity = " + parseFloat(gameStats.TeacherSanity).toFixed(0) + "</p>"
+        + "<p id='tEng'>Teacher Engagement = " + parseFloat(gameStats.TeacherEngagement).toFixed(0) + "</p>"
+        + "<p id='kI'>Knowledge Imparted = " + parseFloat(gameStats.KnowledgeImparted).toFixed(0) + "</p>"
+        + "<p id='BAC'>BAC = " + parseFloat(gameStats.BloodAlchoholContent).toFixed(2) + "</p></div>";
+
+
+    textbox.append(object);
+
+}
+
 //loads stats when page loads
 window.addEventListener('DOMContentLoaded', (event) => {
     loadStats();
