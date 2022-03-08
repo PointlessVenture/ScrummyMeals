@@ -94,6 +94,57 @@ const splitClass = (resource, char) =>
 }
 
 
+// Losing interest
+
+const joke = (resource, char) =>
+{
+
+}
+
+const getAttention = (resource, char) =>
+{
+
+}
+
+const ignore = (resource, char) =>
+{
+
+}
+
+const yell = (resource, char) =>
+{
+
+}
+
+
+// Explain a concept
+
+const tangent = (resource, char) =>
+{
+
+}
+
+const explainNormal = (resource, char) =>
+{
+
+}
+
+const basicExplanation = (resource, char) =>
+{
+
+}
+
+const inDepthExplanation = (resource, char) =>
+{
+
+}
+
+const dontExplain = (resource, char) =>
+{
+
+}
+
+
 export {berate, readSlides, skimSlides, explain, explainSlides, reiterate, readNotes, helpStudents, relax, drink, allowAnyone, assignGroups, splitClass}
 
 window.berate = berate;
