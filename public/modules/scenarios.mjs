@@ -62,19 +62,20 @@ Option2Outputs = [
 "You take a moment to let your mind drift away. Might be time for that vacation to Bermuda.",
 "You find a student who seems ready and ask them if they caught last night's football game. They haven't, but hey, it was worth a shot."]
 Option3Outputs = [
-"You reach into your leather bag and produce a flask of your treasured Cognac, before taking a sip. Delicious.",
-"You take a moment to grab your crystalline vial from it's case and a bottle of the finest Absinthe. You take a moment to savor it, before taking the tiniest sip.",
+"You reach into your leather bag and produce a flask of your iconic Cognac, before taking a sip. Delicious.",
+"You take a moment to grab your crystalline vial from it's case and a bottle of the finest treasured Absinthe. You take a moment to savor it, before taking the tiniest sip.",
 "You pull out your water bottle and take a swig of the Moonshine you made yesterday. Needs a little more yeast. Oh well.",
 "You pop the top off of the Starbucks you had brought earlier, and somewhat discreetly, add a dash of Bailey's, just to spice it up.",
 "You reach under your desk and produce, from the cooler you stashed under there, a Whiteclaw. You pop the top and chug the whole beverage in a single gulp. The class applauds."]
 Option4Outputs = [
-"You look for a particularly confused student and ask if they have questions. They don't, but it still aussauges thier concerns."
+"You look for a particularly confused student and ask if they have questions. They don't, but it still aussauges thier concerns.",
+"You find a student who is typing notes with a furious pace, and explain what things they need to know, and don't need to know."
 ]
 AllOptionOutputs = [Option1Outputs, Option2Outputs, Option3Outputs, Option4Outputs]
 const LullMoment = new Scenario(SceneString, Options, AllOptionOutputs)
 
 SceneString = "You notice the students are losing focus- time to pull them back in."
-Options =  ["joke", "getAttention", "ignore"]
+Options =  ["joke", "getAttention", "ignore", "yellAttention"]
 Option1Outputs = [
 "You tell a hilarious Joke about how Brian should add Java programming to the Cirriculum. Nobody really wants to program Java, but that didn't stop you before.",
 "You tell a moderately funny joke about how you should blame Duane Dunston for all of your problems. Half the class hasn't even heard of Duane but that's okay.",
@@ -87,8 +88,59 @@ Option3Outputs = [
 "The students are not paying any attention to you. You can finally have that lecture about Applescript that you really wanted to have.",
 "You can tell the students are not paying attention, but hey, that's their loss. You make a mental note to make the test on this section really hard.",
 "You, as a test, stop Lecturing. No one cares.",]
-AllOptionOutputs = [Option1Outputs, Option2Outputs, Option3Outputs]
+Option4Outputs = [
+"You shriek at the students angrily. All of the immediately turn and face you with a horrified expression.",
+"You let out a bloodcurdling scream. Every student slowly to you in horror. A flock of birds takes off from a nearby tree. Students in the hallway flee in terror.",
+"You yell decently loud, and get the attention of the class.",
+"You loose a barbaric yawp, shouting to the class to pursue glory and honor! The students are briefly confused, but you have thier attention."]
+
+AllOptionOutputs = [Option1Outputs, Option2Outputs, Option3Outputs, Option4Outputs]
 const LosingFocus = new Scenario(SceneString, Options, AllOptionOutputs)
 
+SceneString = "Despite how late it is into the lecture, a student comes in, clutching a Starbucks. How to react to this?"
+Options =  ["yellLate", "ignore", "slyComment", "overexplain"]
+Option1Outputs = [
+"You shout angrily at the audacity of this pathetic student, for DARING to come in late to your critically important lecture. They feel intense shame.",
+"You berate the student aggressively for being even 1 minute late to your class, their schedule be damned.",]
+Option2Outputs = [
+"You continue lecturing. This student is unimportant.",
+"You keep talking, refusing to even acknowledge this student's prescence with eye contact.",
+"So, as you can see, there are a variety of assembly instructions you can use to control program flow."]
+Option3Outputs = [
+"You greet the student in a way that gives the vibe that you aren't upset, just really, really dissapointed.",
+"You greet the student in a way that implies that you hate their guts. The class looks about nervously.",
+"You begin to tell your students to pull out thier notebooks for a pop quiz on the material you've already taught, just to see the horror on that student's face before you call it off."]
+Option4Outputs = [
+`You launch into a tirade about how education is super important. Your students have paid an exorbitant tuition just to have the privelege of being educated, and they have the Audacity. THE AUDACITY, 
+to show up 30 minutes late to a class. You're incensed at their ignorance. And you point out that you even be mad if they had shown up just a few minutes late, like thier time management skills are clearly not
+the best but at least they are trying to show up on time, but YOU, YOU, you didn't even make an effort! You're a disgrace to this school and a disgrace to the teachers who are trying thier best to help you succeed.
+You disrespectful scum. When I was in college I had to walk 20 miles through the snow, uphill both ways, just to get a 20 minute lecture from an old guy in a trenchcoat that smells like pinto beans but I did it.
+The students all look about nervously as you take half an hour to go on this ridiculous tirade.`
+]
+AllOptionOutputs = [Option1Outputs, Option2Outputs, Option3Outputs, Option4Outputs]
+const LateStudent = new Scenario(SceneString, Options, AllOptionOutputs)
 
-export {StudentDecentQuestion, StandardLecture, LullMoment, LosingFocus}
+SceneString = "This slide has a difficult concept on it. Perhaps it would do with some more explanation."
+Options =  ["yellLate", "ignore", "slyComment", "overexplain"]
+Option1Outputs = [
+"You shout angrily at the audacity of this pathetic student, for DARING to come in late to your critically important lecture. They feel intense shame.",
+"You berate the student aggressively for being even 1 minute late to your class, their schedule be damned.",]
+Option2Outputs = [
+"You continue lecturing. This student is unimportant.",
+"You keep talking, refusing to even acknowledge this student's prescence with eye contact.",
+"So, as you can see, there are a variety of assembly instructions you can use to control program flow."]
+Option3Outputs = [
+"You greet the student in a way that gives the vibe that you aren't upset, just really, really dissapointed.",
+"You greet the student in a way that implies that you hate their guts. The class looks about nervously.",
+"You begin to tell your students to pull out thier notebooks for a pop quiz on the material you've already taught, just to see the horror on that student's face before you call it off."]
+Option4Outputs = [
+`You launch into a tirade about how education is super important. Your students have paid an exorbitant tuition just to have the privelege of being educated, and they have the Audacity. THE AUDACITY, 
+to show up 30 minutes late to a class. You're incensed at their ignorance. And you point out that you even be mad if they had shown up just a few minutes late, like thier time management skills are clearly not
+the best but at least they are trying to show up on time, but YOU, YOU, you didn't even make an effort! You're a disgrace to this school and a disgrace to the teachers who are trying thier best to help you succeed.
+You disrespectful scum. When I was in college I had to walk 20 miles through the snow, uphill both ways, just to get a 20 minute lecture from an old guy in a trenchcoat that smells like pinto beans but I did it.
+The students all look about nervously as you take half an hour to go on this ridiculous tirade.`
+]
+AllOptionOutputs = [Option1Outputs, Option2Outputs, Option3Outputs, Option4Outputs]
+const LateStudent = new Scenario(SceneString, Options, AllOptionOutputs)
+
+export {StudentDecentQuestion, StandardLecture, LullMoment, LosingFocus, LateStudent}
