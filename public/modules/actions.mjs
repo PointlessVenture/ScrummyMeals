@@ -139,6 +139,11 @@ const inDepthExplanation = (resource, char) =>
 
 }
 
+const dontExplain = (resource, char) =>
+{
+
+}
+
 
 export {berate, readSlides, skimSlides, explain, explainSlides, reiterate, readNotes, helpStudents, relax, drink, allowAnyone, assignGroups, splitClass}
 
