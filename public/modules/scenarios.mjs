@@ -52,7 +52,7 @@ AllOptionOutputs = [Option1Outputs, Option2Outputs, Option3Outputs]
 const StandardLecture = new Scenario(SceneString, Options, AllOptionOutputs)
 
 SceneString = "You've got a spare moment while the students catch up. Time for a break."
-Options =  ["readNotes", "relax", "drink"]
+Options =  ["readNotes", "relax", "drink", "helpStudents"]
 Option1Outputs = [
 "You skim the notes you laid out for this lecture. Best to be prepared for the incoming lecture.",
 "You're pretty sure you know this stuff back and forth, but you go over the notes for this class, one more time, just in case.",
@@ -67,7 +67,28 @@ Option3Outputs = [
 "You pull out your water bottle and take a swig of the Moonshine you made yesterday. Needs a little more yeast. Oh well.",
 "You pop the top off of the Starbucks you had brought earlier, and somewhat discreetly, add a dash of Bailey's, just to spice it up.",
 "You reach under your desk and produce, from the cooler you stashed under there, a Whiteclaw. You pop the top and chug the whole beverage in a single gulp. The class applauds."]
-AllOptionOutputs = [Option1Outputs, Option2Outputs, Option3Outputs]
+Option4Outputs = [
+"You look for a particularly confused student and ask if they have questions. They don't, but it still aussauges thier concerns."
+]
+AllOptionOutputs = [Option1Outputs, Option2Outputs, Option3Outputs, Option4Outputs]
 const LullMoment = new Scenario(SceneString, Options, AllOptionOutputs)
 
-export {StudentDecentQuestion, StandardLecture, LullMoment}
+SceneString = "You notice the students are losing focus- time to pull them back in."
+Options =  ["joke", "getAttention", "ignore"]
+Option1Outputs = [
+"You tell a hilarious Joke about how Brian should add Java programming to the Cirriculum. Nobody really wants to program Java, but that didn't stop you before.",
+"You tell a moderately funny joke about how you should blame Duane Dunston for all of your problems. Half the class hasn't even heard of Duane but that's okay.",
+"You inform your students that the technical term for the semicolon is \"Gizmo\". They laugh appropriately."]
+Option2Outputs = [
+"You tap your hand on the desk to make a suitably loud noise, to grab the student's attention.",
+"You call on a student and ask them a question about the lecture, forcing them to pay attention.",
+"You ask the students if they understand the material, and they nod appropriately. At least they are paying a little bit of attention."]
+Option3Outputs = [
+"The students are not paying any attention to you. You can finally have that lecture about Applescript that you really wanted to have.",
+"You can tell the students are not paying attention, but hey, that's their loss. You make a mental note to make the test on this section really hard.",
+"You, as a test, stop Lecturing. No one cares.",]
+AllOptionOutputs = [Option1Outputs, Option2Outputs, Option3Outputs]
+const LosingFocus = new Scenario(SceneString, Options, AllOptionOutputs)
+
+
+export {StudentDecentQuestion, StandardLecture, LullMoment, LosingFocus}
