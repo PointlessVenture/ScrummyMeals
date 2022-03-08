@@ -7,13 +7,14 @@
 
 import Resources from "./modules/resources.mjs"
 import Character from "./modules/character.mjs"
-export {berate, readSlides, skimSlides, explain, explainSlides, reiterate, readNotes, helpStudents, relax, 
-    drink, allowAnyone, assignGroups, splitClass} from "./modules/actions.mjs";
 import {StudentDecentQuestion, StandardLecture, LullMoment} from "./modules/scenarios.mjs";
+import {getRandomInt} from "./modules/RNG.mjs";
+import Ending from "./modules/ending.mjs";
 
 
 //Default Gamestate
 let gameStats = new Resources(50);
+const ending = new Ending();
 
 // Character Choices
 const teachers = [];
@@ -34,15 +35,17 @@ var currentProffessor;
 var fname;
 var lname;
 
-const getRandomInt = (max) => {
-    return Math.floor(Math.random() * max);
-}
-
 //Handles the onclick events from the button
 const handleAction = (action) => {
     action(gameStats, currentProffessor);
     loadStats();
     SetScene(sceneList[getRandomInt(sceneList.length)])
+    checkWin(gameStats);
+}
+
+const checkWin = (stats) => {
+    const result = ending.checkStats(stats);
+    console.log(result);
 }
 
 const changeProffessor = (proffessor) => {

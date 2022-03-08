@@ -3,7 +3,7 @@ export default class Resources
     constructor(baseStats) {
         this.StudentHappiness = baseStats;
         this.StudentSanity = baseStats;
-        this. StudentEngagement = baseStats;
+        this.StudentEngagement = baseStats;
 
         this.TeacherHappiness = baseStats;
         this.TeacherSanity = baseStats;
