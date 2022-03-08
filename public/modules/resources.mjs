@@ -9,7 +9,7 @@ export default class Resources
         this.TeacherSanity = baseStats;
         this.TeacherEngagement = baseStats;
 
-        this.KnowledgeImparted = baseStats;
+        this.KnowledgeImparted = 0;
         this.BloodAlchoholContent = 0;
     }
 }

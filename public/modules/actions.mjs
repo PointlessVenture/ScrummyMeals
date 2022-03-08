@@ -94,7 +94,83 @@ const splitClass = (resource, char) =>
 }
 
 
-export {berate, readSlides, skimSlides, explain, explainSlides, reiterate, readNotes, helpStudents, relax, drink, allowAnyone, assignGroups, splitClass}
+// Losing interest
+
+const joke = (resource, char) =>
+{
+
+}
+
+const getAttention = (resource, char) =>
+{
+
+}
+
+const ignore = (resource, char) =>
+{
+
+}
+
+const yellAttention = (resource, char) =>
+{
+
+}
+
+
+// Explain a concept
+
+const tangent = (resource, char) =>
+{
+
+}
+
+const explainNormal = (resource, char) =>
+{
+
+}
+
+const basicExplanation = (resource, char) =>
+{
+
+}
+
+const inDepthExplanation = (resource, char) =>
+{
+
+}
+
+const dontExplain = (resource, char) =>
+{
+
+}
+
+
+// Student comes in late
+
+const yellLate = (resource, char) =>
+{
+
+}
+
+const ignoreLate = (resource, char) =>
+{
+
+}
+
+const slyComment = (resource, char) =>
+{
+
+}
+
+const overexplain = (resource, char) =>
+{
+
+}
+
+
+
+
+export {berate, readSlides, skimSlides, explain, explainSlides, reiterate, readNotes, helpStudents, relax, drink, allowAnyone, assignGroups, splitClass, joke, getAttention, ignore, yellAttention, tangent, explainNormal, basicExplanation, inDepthExplanation, dontExplain, yellLate, ignoreLate, slyComment, overexplain}
 
 window.berate = berate;
 window.readSlides = readSlides;
@@ -109,3 +185,16 @@ window.drink = drink;
 window.allowAnyone = allowAnyone;
 window.assignGroups = assignGroups;
 window.splitClass = splitClass;
+window.joke = joke;
+window.getAttention = getAttention;
+window.ignore = ignore;
+window.yellAttention = yellAttention;
+window.tangent = tangent;
+window.explainNormal = explainNormal;
+window.basicExplanation = basicExplanation;
+window.inDepthExplanation = inDepthExplanation;
+window.dontExplain = dontExplain;
+window.yellLate = yellLate;
+window.ignoreLate = ignoreLate;
+window.slyComment = slyComment;
+window.overexplain = overexplain;
