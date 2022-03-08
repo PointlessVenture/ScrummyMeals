@@ -111,7 +111,7 @@ const ignore = (resource, char) =>
 
 }
 
-const yell = (resource, char) =>
+const yellAttention = (resource, char) =>
 {
 
 }
@@ -140,6 +140,29 @@ const inDepthExplanation = (resource, char) =>
 }
 
 const dontExplain = (resource, char) =>
+{
+
+}
+
+
+// Student comes in late
+
+const yellLate = (resource, char) =>
+{
+
+}
+
+const ignore = (resource, char) =>
+{
+
+}
+
+const slyComment = (resource, char) =>
+{
+
+}
+
+const overexplain = (resource, char) =>
 {
 
 }
