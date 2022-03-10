@@ -112,34 +112,37 @@ Option3Outputs = [
 "You greet the student in a way that implies that you hate their guts. The class looks about nervously.",
 "You begin to tell your students to pull out their notebooks for a pop quiz on the material you've already taught, just to see the horror on that student's face before you call it off."]
 Option4Outputs = [
-`You launch into a tirade about how education is super important. Your students have paid an exorbitant tuition just to have the privelege of being educated, and they have the Audacity. THE AUDACITY, 
-to show up 30 minutes late to a class. You're incensed at their ignorance. And you point out that you even be mad if they had shown up just a few minutes late, like their time management skills are clearly not
-the best but at least they are trying to show up on time, but YOU, YOU, you didn't even make an effort! You're a disgrace to this school and a disgrace to the teachers who are trying their best to help you succeed.
-You disrespectful scum. When I was in college I had to walk 20 miles through the snow, uphill both ways, just to get a 20 minute lecture from an old guy in a trenchcoat that smells like pinto beans but I did it.
-The students all look about nervously as you take half an hour to go on this ridiculous tirade.`
+"You launch into a tirade about how education is super important. Your students have paid an exorbitant tuition just to have the privelege of being educated, and they have the Audacity. THE AUDACITY, " + 
+"to show up 30 minutes late to a class. You're incensed at their ignorance. And you point out that you even be mad if they had shown up just a few minutes late, like their time management skills are clearly not " +
+"the best but at least they are trying to show up on time, but YOU, YOU, you didn't even make an effort! You're a disgrace to this school and a disgrace to the teachers who are trying their best to help you succeed. " +
+"You disrespectful scum. When I was in college I had to walk 20 miles through the snow, uphill both ways, just to get a 20 minute lecture from an old guy in a trenchcoat that smells like pinto beans but I did it. " +
+"The students all look about nervously as you take half an hour to go on this ridiculous tirade."
 ]
 AllOptionOutputs = [Option1Outputs, Option2Outputs, Option3Outputs, Option4Outputs]
 const LateStudent = new Scenario(SceneString, Options, AllOptionOutputs)
 
 SceneString = "This slide has a difficult concept on it. Perhaps it would do with some more explanation."
-Options =  ["yellLate", "ignore", "slyComment", "overexplain"]
+Options =  ["tangent", "explainNormal", "basicExplanation", "inDepthExplanation", "dontExplain"]
 Option1Outputs = [
-"You shout angrily at the audacity of this pathetic student, for DARING to come in late to your critically important lecture. They feel intense shame.",
-"You berate the student aggressively for being even 1 minute late to your class, their schedule be damned.",]
+"Rather than really explain this slide, you take a time to tell a thrilling story about how your aunt once trained a monkey to bake a casserole. The students appreciate this development in Animal Behaviorism.",
+"As you start to explain this slide, you feel it's important enough to go over how this could tie into the general flow of buisness administration, to prepare your students for the real world. You begin to tell the students eveything they need to know.",
+"This slide is long, but it's not really important. It's much more important that you know all about Richard Stallman's personal life, and how he once fended off a group of highly-trained Microsoft assassins with the power of open source software, and the power of his sick katanas."]
 Option2Outputs = [
-"You continue lecturing. This student is unimportant.",
-"You keep talking, refusing to even acknowledge this student's prescence with eye contact.",
-"So, as you can see, there are a variety of assembly instructions you can use to control program flow."]
+"This is standard fare. A difficult topic can still be explained clearly and consisely by a skilled professor like yourself.",
+"You explain this topic in your standard way, valuing the established flow of the lecture, perhaps with just a bit of extra emphasis.",
+"You explain in the way that your students are used to. The students understand for the most part."]
 Option3Outputs = [
-"You greet the student in a way that gives the vibe that you aren't upset, just really, really dissapointed.",
-"You greet the student in a way that implies that you hate their guts. The class looks about nervously.",
-"You begin to tell your students to pull out their notebooks for a pop quiz on the material you've already taught, just to see the horror on that student's face before you call it off."]
+"You explain the concept at a surface level. The students nod with a surface understanding.",
+"You gloss over the concept. It's really just in there because the curriculum requires it anyway, and it's just gonna be one question on the test. No big deal.",
+"You skim over this concept, like that one lizard skims over the surface of the water. It's a graceful, insightful maneuver that leaves students a bit bewildered."]
 Option4Outputs = [
-`You launch into a tirade about how education is super important. Your students have paid an exorbitant tuition just to have the privelege of being educated, and they have the Audacity. THE AUDACITY, 
-to show up 30 minutes late to a class. You're incensed at their ignorance. And you point out that you even be mad if they had shown up just a few minutes late, like their time management skills are clearly not
-the best but at least they are trying to show up on time, but YOU, YOU, you didn't even make an effort! You're a disgrace to this school and a disgrace to the teachers who are trying their best to help you succeed.
-You disrespectful scum. When I was in college I had to walk 20 miles through the snow, uphill both ways, just to get a 20 minute lecture from an old guy in a trenchcoat that smells like pinto beans but I did it.
-The students all look about nervously as you take half an hour to go on this ridiculous tirade.`
+"You really give this slide the time it deserves. Your pour over every last detail, meeting each question in your students eyes before they even have time to ask it.",
+"You explain this slide completely, making sure every piece of information your students could possibly need to know is covered and understood in full.",
+"You talk about every scrap of information this slide has to offer, and you even throw in, as a bonus, how your students can tie the information on this slide into thier professional lives."]
+Option5Outputs = [
+"You don't explain. You say not a single word. You let the slide linger on the screen for a moment, before moving on to the next. Half the students didn't even finish taking notes on it. You don't care.",
+"Explanations are for suckers. You read off the points and move on rapidly. You ignore the students raising thier hands. Who cares? Certainly not you.",
+"You bring up this slide, before taking a seat in your chair. You stare at the class. The class stares at you. This is a normal slide. You stare at the class. They stare back. This is hell."
 ]
 AllOptionOutputs = [Option1Outputs, Option2Outputs, Option3Outputs, Option4Outputs]
 const HardSlide = new Scenario(SceneString, Options, AllOptionOutputs)
