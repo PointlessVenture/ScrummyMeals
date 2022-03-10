@@ -217,14 +217,22 @@ const tellToRead = (resource, char) =>
 {
 	resource.StudentEngagement -= 20 * (1 / char.studentEngageOffset);
 	resource.StudentSanity -= 20 * (1 / char.studentSanityOffset);
-	resource.TeacherSanity += 10 * (1 / char.profSanityOffset);
+	resource.TeacherSanity += 10 * char.profSanityOffset;
 	resource.KnowledgeImparted += 5 * char.knowledgeOffset;
+}
+
+// Misc.
+
+const ignoreDisruption = (resource, char) =>
+{
+	resource.TeacherSanity -= 5 * char.profSanityOffset;
+	resource.TeacherHappiness -= 5 * char.profHappinessOffset;
+
 }
 
 
 
-
-export {berate, readSlides, skimSlides, explain, explainSlides, reiterate, readNotes, helpStudents, relax, drink, allowAnyone, assignGroups, splitClass, joke, getAttention, ignore, yellAttention, tangent, explainNormal, basicExplanation, inDepthExplanation, dontExplain, yellLate, ignoreLate, slyComment, overexplain, hardExplanation, summarize, tellToRead}
+export {berate, readSlides, skimSlides, explain, explainSlides, reiterate, readNotes, helpStudents, relax, drink, allowAnyone, assignGroups, splitClass, joke, getAttention, ignore, yellAttention, tangent, explainNormal, basicExplanation, inDepthExplanation, dontExplain, yellLate, ignoreLate, slyComment, overexplain, hardExplanation, summarize, tellToRead, ignoreDisruption}
 
 window.berate = berate;
 window.readSlides = readSlides;
@@ -255,3 +263,4 @@ window.overexplain = overexplain;
 window.hardExplanation = hardExplanation;
 window.summarize = summarize;
 window.tellToRead = tellToRead;
+window.ignoreDisruption = ignoreDisruption;
