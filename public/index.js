@@ -45,10 +45,20 @@ const handleAction = (action) => {
 
 const checkWin = (stats) => {
     const result = ending.checkStats(stats);
+    var modal = document.getElementById("modal");
+    var words = document.getElementById("modalWords");
+
+    if (result != "") {
+        modal.style.display = "block";
+        var inner = `<p>${result}</p>`
+        modal.innerHTML = `<div class=modal-content>${inner}</div>`;
+    }
+    
     console.log(result);
 }
 
 const changeProffessor = (proffessor) => {
+    loadStats();
     //action(gameStats, currentProffessor)
     currentProffessor = proffessor;
     fname = proffessor.name.split(' ')[0];
@@ -56,8 +66,7 @@ const changeProffessor = (proffessor) => {
     document.getElementById("middle").innerHTML = 
         "<link rel='stylesheet' href='./styling/game.css'>"
         + `<div class='box' id='middleItems'><div id='topTextBox'><p>Playing as ${fname} "${proffessor.abilityName}" ${lname}</p></div>`
-        + "<div id='bgImage'><button onClick=loadTeachers()>Change Teacher</div></div>"
-
+        + "<div id='bottomTextBox'><button onClick=loadTeachers()>Change Teacher</div></div></div>"
     //set random scene
     SetScene();
 }
@@ -89,24 +98,31 @@ const handleOutputs = (scene, choice) => {
 const loadStats = () => {
     let stats = document.getElementById("stats");
     stats.innerHTML = 
-          "<p id='sHap'>Student Happiness = " + parseFloat(gameStats.StudentHappiness).toFixed(0) + "</p>"
-        + "<p id='sSan'>Student Sanity = " + parseFloat(gameStats.StudentSanity).toFixed(0) + "</p>"
-        + "<p id='sEng'>Student Engagement = " + parseFloat(gameStats.StudentEngagement).toFixed(0) + "</p>"
-        + "<p id='tHap'>Teacher Happiness = " + parseFloat(gameStats.TeacherHappiness).toFixed(0) + "</p>"
-        + "<p id='tSan'>Teacher Sanity = " + parseFloat(gameStats.TeacherSanity).toFixed(0) + "</p>"
-        + "<p id='tEng'>Teacher Engagement = " + parseFloat(gameStats.TeacherEngagement).toFixed(0) + "</p>"
-        + "<p id='kI'>Knowledge Imparted = " + parseFloat(gameStats.KnowledgeImparted).toFixed(0) + "</p>"
-        + "<p id='BAC'>BAC = " + parseFloat(gameStats.BloodAlchoholContent).toFixed(2) + "</p>";
+          "<p id='sHap'>Student Happiness: " + parseFloat(gameStats.StudentHappiness).toFixed(0) + "</p>"
+        + "<p id='sSan'>Student Sanity: " + parseFloat(gameStats.StudentSanity).toFixed(0) + "</p>"
+        + "<p id='sEng'>Student Engagement: " + parseFloat(gameStats.StudentEngagement).toFixed(0) + "</p>"
+        + "<p id='tHap'>Teacher Happiness: " + parseFloat(gameStats.TeacherHappiness).toFixed(0) + "</p>"
+        + "<p id='tSan'>Teacher Sanity: " + parseFloat(gameStats.TeacherSanity).toFixed(0) + "</p>"
+        + "<p id='tEng'>Teacher Engagement: " + parseFloat(gameStats.TeacherEngagement).toFixed(0) + "</p>"
+        + "<p id='kI'>Knowledge Imparted: " + parseFloat(gameStats.KnowledgeImparted).toFixed(0) + "</p>"
+        + "<p id='BAC'>BAC: " + parseFloat(gameStats.BloodAlchoholContent).toFixed(2) + "</p>";
 }
 
 const loadTeachers = () => {
-    let textbox = document.getElementById("topTextBox");
+    let textbox = document.getElementById("middle");
     textbox.innerHTML = "";
     
     var stylesheet = document.createElement('link');
     stylesheet.setAttribute('rel', 'stylesheet');
     stylesheet.setAttribute('href', './styling/chooseProfessor.css')
-    textbox.prepend(stylesheet);
+    textbox.append(stylesheet);
+
+    var middleItems = document.createElement('div');
+    middleItems.setAttribute('id', 'middleItems');
+
+    var topText = document.createElement('div');
+    topText.setAttribute('id', 'topTextBox');
+    middleItems.append(topText);
 
     for(let teacher of teachers) {        
         var fName = teacher.name.split(' ')[0];
@@ -122,15 +138,29 @@ const loadTeachers = () => {
             changeProffessor(teacher);
         }
 
-        textbox.append(object);
+        topText.append(object);
     }
+    textbox.append(middleItems);
 }
 
 //loads stats when page loads
 window.addEventListener('DOMContentLoaded', (event) => {
-    loadStats();
     loadTeachers();
+
+    var close = document.getElementById("restart");
+    close.onClick = () => {
+        location.reload();
+    }
+
+    window.onclick = (event) => {
+        if (event.target == modal) {
+            location.reload();
+        }
+    }
 });
+
+
+
 
 window.handleAction = handleAction;
 window.handleOutputs = handleOutputs;

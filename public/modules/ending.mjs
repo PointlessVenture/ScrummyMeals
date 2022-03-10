@@ -2,6 +2,7 @@ import {getRandomInt} from "./RNG.mjs";
 
 const WIN_VALUE = 100;
 const LOSS_VALUE = 0;
+const KNOWLEDGE_LOSS = -20;
 const BAC_LOSS = 0.25;
 
 export default class Ending {
@@ -9,30 +10,20 @@ export default class Ending {
     constructor () {};
 
     checkStats = (stats) => {
-        let result = '';
-        
-        switch(stats) {
-            case stats.StudentHappiness <= LOSS_VALUE:
-                result = this.happyLoss();
-                break;
-            case stats.StudentSanity <= LOSS_VALUE:
-                result = this.sanityLoss();
-                break;
-            case stats.StudentEngagement <= LOSS_VALUE:
-                result = this.engagementLoss();
-                break;
-            case stats.KnowledgeImparted <= LOSS_VALUE:
-                result = this.knowledgeLoss();
-                break;
-            case stats.BloodAlchoholContent >= BAC_LOSS:
-                result = this.bacLoss();
-                break;
-            case stats.KnowledgeImparted >= WIN_VALUE:
-                result = this.knowledgeWin();
-                break;
-        };
-        console.log(result);
-        return result;
+        if (stats.StudentHappiness <= LOSS_VALUE)
+            return this.happyLoss();
+        if (stats.StudentSanity <= LOSS_VALUE)
+            return this.sanityLoss();            
+        if (stats.StudentEngagement <= LOSS_VALUE)
+            return this.engagementLoss();            
+        if (stats.KnowledgeImparted <= KNOWLEDGE_LOSS)
+            return this.knowledgeLoss();            
+        if (stats.BloodAlchoholContent >= BAC_LOSS)
+            return this.bacLoss();            
+        if (stats.KnowledgeImparted >= WIN_VALUE)
+            return this.knowledgeWin();
+            
+        return "";
     }
 
     happyLoss = () => {
@@ -53,7 +44,7 @@ export default class Ending {
     engagementLoss = () => {
         const text =
             "The room becomes abuzz with activity. The furious sound of keyboard clacks and mouse clicks assualt your ears. You look at the nearest students computer. He is playing"
-            + "CSGO in offline mode. You look at another screen; a student is playing Minesweeper. You decide to end class early today. Everyone cheers.";
+            + "CSGO in offline mode. You look at another screen. A student is playing Minesweeper. You decide to end class early today. Everyone cheers.";
 
         return text;
     }
@@ -85,7 +76,7 @@ export default class Ending {
 
     knowledgeWin = () => {
         const text = 
-            `Angels sing, trumplets blare, a light shines down from the heavens. Every student in the class has achieved a level of knowledge unknown to thier tiny mortal minds.
+            `Angels sing, trumplets blare, a light shines down from the heavens. Every student in the class has achieved a level of knowledge unknown to their tiny mortal minds.
             During the next exam no one scores below a 99%, one student miswrote their name. You recive the Edward Phelps Lyman Profforship award. You spend your bonus on some 
             new bottles of Cognac.`;
 

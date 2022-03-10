@@ -13,13 +13,14 @@ var Options;
 var Option1Outputs;
 var Option2Outputs;
 var Option3Outputs;
+var Option4Outputs;
 var AllOptionOutputs;
 
 
 SceneString = "While you're lecturing, a student interrupts you to ask a completely reasonable and thoughtful question. They sound genuinely confused."
 Options = ["berate", "readSlides", "explain"]
 Option1Outputs = [
-"You viciously berate the student for thier foolish questions, and insinuate that they bring shame upon thier ancestors.",
+"You viciously berate the student for their foolish questions, and insinuate that they bring shame upon their ancestors.",
 "You berate the student, in a sarcastic, yet slightly charming way that makes them laugh nervously.",
 "You berate the student in a way that gives the vibe that you aren't upset, just really, really dissapointed."]
 Option2Outputs = [
@@ -68,7 +69,7 @@ Option3Outputs = [
 "You pop the top off of the Starbucks you had brought earlier, and somewhat discreetly, add a dash of Bailey's, just to spice it up.",
 "You reach under your desk and produce, from the cooler you stashed under there, a Whiteclaw. You pop the top and chug the whole beverage in a single gulp. The class applauds."]
 Option4Outputs = [
-"You look for a particularly confused student and ask if they have questions. They don't, but it still aussauges thier concerns.",
+"You look for a particularly confused student and ask if they have questions. They don't, but it still aussauges their concerns.",
 "You find a student who is typing notes with a furious pace, and explain what things they need to know, and don't need to know."
 ]
 AllOptionOutputs = [Option1Outputs, Option2Outputs, Option3Outputs, Option4Outputs]
@@ -92,7 +93,7 @@ Option4Outputs = [
 "You shriek at the students angrily. All of the immediately turn and face you with a horrified expression.",
 "You let out a bloodcurdling scream. Every student slowly to you in horror. A flock of birds takes off from a nearby tree. Students in the hallway flee in terror.",
 "You yell decently loud, and get the attention of the class.",
-"You loose a barbaric yawp, shouting to the class to pursue glory and honor! The students are briefly confused, but you have thier attention."]
+"You loose a barbaric yawp, shouting to the class to pursue glory and honor! The students are briefly confused, but you have their attention."]
 
 AllOptionOutputs = [Option1Outputs, Option2Outputs, Option3Outputs, Option4Outputs]
 const LosingFocus = new Scenario(SceneString, Options, AllOptionOutputs)
@@ -109,11 +110,11 @@ Option2Outputs = [
 Option3Outputs = [
 "You greet the student in a way that gives the vibe that you aren't upset, just really, really dissapointed.",
 "You greet the student in a way that implies that you hate their guts. The class looks about nervously.",
-"You begin to tell your students to pull out thier notebooks for a pop quiz on the material you've already taught, just to see the horror on that student's face before you call it off."]
+"You begin to tell your students to pull out their notebooks for a pop quiz on the material you've already taught, just to see the horror on that student's face before you call it off."]
 Option4Outputs = [
 `You launch into a tirade about how education is super important. Your students have paid an exorbitant tuition just to have the privelege of being educated, and they have the Audacity. THE AUDACITY, 
-to show up 30 minutes late to a class. You're incensed at their ignorance. And you point out that you even be mad if they had shown up just a few minutes late, like thier time management skills are clearly not
-the best but at least they are trying to show up on time, but YOU, YOU, you didn't even make an effort! You're a disgrace to this school and a disgrace to the teachers who are trying thier best to help you succeed.
+to show up 30 minutes late to a class. You're incensed at their ignorance. And you point out that you even be mad if they had shown up just a few minutes late, like their time management skills are clearly not
+the best but at least they are trying to show up on time, but YOU, YOU, you didn't even make an effort! You're a disgrace to this school and a disgrace to the teachers who are trying their best to help you succeed.
 You disrespectful scum. When I was in college I had to walk 20 miles through the snow, uphill both ways, just to get a 20 minute lecture from an old guy in a trenchcoat that smells like pinto beans but I did it.
 The students all look about nervously as you take half an hour to go on this ridiculous tirade.`
 ]
@@ -132,15 +133,15 @@ Option2Outputs = [
 Option3Outputs = [
 "You greet the student in a way that gives the vibe that you aren't upset, just really, really dissapointed.",
 "You greet the student in a way that implies that you hate their guts. The class looks about nervously.",
-"You begin to tell your students to pull out thier notebooks for a pop quiz on the material you've already taught, just to see the horror on that student's face before you call it off."]
+"You begin to tell your students to pull out their notebooks for a pop quiz on the material you've already taught, just to see the horror on that student's face before you call it off."]
 Option4Outputs = [
 `You launch into a tirade about how education is super important. Your students have paid an exorbitant tuition just to have the privelege of being educated, and they have the Audacity. THE AUDACITY, 
-to show up 30 minutes late to a class. You're incensed at their ignorance. And you point out that you even be mad if they had shown up just a few minutes late, like thier time management skills are clearly not
-the best but at least they are trying to show up on time, but YOU, YOU, you didn't even make an effort! You're a disgrace to this school and a disgrace to the teachers who are trying thier best to help you succeed.
+to show up 30 minutes late to a class. You're incensed at their ignorance. And you point out that you even be mad if they had shown up just a few minutes late, like their time management skills are clearly not
+the best but at least they are trying to show up on time, but YOU, YOU, you didn't even make an effort! You're a disgrace to this school and a disgrace to the teachers who are trying their best to help you succeed.
 You disrespectful scum. When I was in college I had to walk 20 miles through the snow, uphill both ways, just to get a 20 minute lecture from an old guy in a trenchcoat that smells like pinto beans but I did it.
 The students all look about nervously as you take half an hour to go on this ridiculous tirade.`
 ]
 AllOptionOutputs = [Option1Outputs, Option2Outputs, Option3Outputs, Option4Outputs]
-const LateStudent = new Scenario(SceneString, Options, AllOptionOutputs)
+const HardSlide = new Scenario(SceneString, Options, AllOptionOutputs)
 
-export {StudentDecentQuestion, StandardLecture, LullMoment, LosingFocus, LateStudent}
+export {StudentDecentQuestion, StandardLecture, LullMoment, LosingFocus, LateStudent, HardSlide}
