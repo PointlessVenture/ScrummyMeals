@@ -69,6 +69,7 @@ const changeProffessor = (proffessor) => {
         + "<div id='bottomTextBox'><button onClick=loadTeachers()>Change Teacher</div></div></div>"
     //set random scene
     SetScene();
+    loadTeacherStats();
 }
 
 const SetScene = () => {
@@ -85,6 +86,7 @@ const SetScene = () => {
         buttons.innerHTML += 
             `<button onClick=handleAction(${option});handleOutputs(${randInt},${i})>${option}</button>`;
     }
+    
 }
 
 const handleOutputs = (scene, choice) => {
@@ -141,6 +143,20 @@ const loadTeachers = () => {
         topText.append(object);
     }
     textbox.append(middleItems);
+}
+
+const loadTeacherStats = () => {
+    
+    let textbox2 = document.getElementById("teacherStatsTop");
+    textbox2.innerHTML = 
+        `<p> Current Professor: ${currentProffessor.name} </p>`
+         + `<p id='sHap'>Student Happiness Modifier = ${currentProffessor.studentHappyOffset}</p>`
+        + `<p id='sSan'>Student Sanity Modifier = ${currentProffessor.studentSanityOffset}</p>`
+        + `<p id='sEng'>Student Engagement Modifier = ${currentProffessor.studentEngageOffset}</p>`
+        + `<p id='tHap'>Teacher Happiness Modifier = ${currentProffessor.profHappyOffset}</p>`
+        + `<p id='tSan'>Teacher Sanity Modifier = ${currentProffessor.profSanityOffset}</p>`
+        + `<p id='tEng'>Teacher Engagement Modifier = ${currentProffessor.profEngageOffset}</p>`
+        + `<p id='kI'>Knowledge Imparted Modifier = ${currentProffessor.knowledgeOffset}</p>`;
 }
 
 //loads stats when page loads
