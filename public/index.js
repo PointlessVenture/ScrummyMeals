@@ -57,6 +57,7 @@ const changeProffessor = (proffessor) => {
 
     //set random scene
     SetScene();
+    loadTeacherStats();
 }
 
 const SetScene = () => {
@@ -73,6 +74,7 @@ const SetScene = () => {
         buttons.innerHTML += 
             `<button onClick=handleAction(${option});handleOutputs(${randInt},${i})>${option}</button>`;
     }
+    
 }
 
 const handleOutputs = (scene, choice) => {
@@ -124,40 +126,17 @@ const loadTeachers = () => {
 }
 
 const loadTeacherStats = () => {
-    let textbox = document.getElementById("teacherStatsTop");
-    textbox.innerHTML = "Current Professor";
     
-    var stylesheet = document.createElement('link');
-    stylesheet.setAttribute('rel', 'stylesheet');
-    stylesheet.setAttribute('href', './styling/chooseProfessor.css')
-    textbox.prepend(stylesheet);
-
-    var fName = currentProffessor.name.split(' ');
-    var lName = currentProffessor.name.split(' ');
-    
-    var object = document.createElement("div");
-    object.setAttribute('class', 'professorImages');
-
-    object.innerHTML =`<p>${fName} "${currentProffessor.abilityName}" ${lName}` 
-    + `</p><img src="${teacher.image }" alt="${currentProffessor.abilityName}"></div>`;
-
-    var object2 = document.createElement("div");
-
-
-  
-    object2.innerHTML = 
-          "<p id='sHap'>Student Happiness = " + parseFloat(gameStats.StudentHappiness).toFixed(0) + "</p>"
-        + "<p id='sSan'>Student Sanity = " + parseFloat(gameStats.StudentSanity).toFixed(0) + "</p>"
-        + "<p id='sEng'>Student Engagement = " + parseFloat(gameStats.StudentEngagement).toFixed(0) + "</p>"
-        + "<p id='tHap'>Teacher Happiness = " + parseFloat(gameStats.TeacherHappiness).toFixed(0) + "</p>"
-        + "<p id='tSan'>Teacher Sanity = " + parseFloat(gameStats.TeacherSanity).toFixed(0) + "</p>"
-        + "<p id='tEng'>Teacher Engagement = " + parseFloat(gameStats.TeacherEngagement).toFixed(0) + "</p>"
-        + "<p id='kI'>Knowledge Imparted = " + parseFloat(gameStats.KnowledgeImparted).toFixed(0) + "</p>"
-        + "<p id='BAC'>BAC = " + parseFloat(gameStats.BloodAlchoholContent).toFixed(2) + "</p></div>";
-
-
-    textbox.append(object);
-
+    let textbox2 = document.getElementById("teacherStatsTop");
+    textbox2.innerHTML = 
+        `<p> Current Professor: ${currentProffessor.name} </p>`
+         + `<p id='sHap'>Student Happiness Modifier = ${currentProffessor.studentHappyOffset}</p>`
+        + `<p id='sSan'>Student Sanity Modifier = ${currentProffessor.studentSanityOffset}</p>`
+        + `<p id='sEng'>Student Engagement Modifier = ${currentProffessor.studentEngageOffset}</p>`
+        + `<p id='tHap'>Teacher Happiness Modifier = ${currentProffessor.profHappyOffset}</p>`
+        + `<p id='tSan'>Teacher Sanity Modifier = ${currentProffessor.profSanityOffset}</p>`
+        + `<p id='tEng'>Teacher Engagement Modifier = ${currentProffessor.profEngageOffset}</p>`
+        + `<p id='kI'>Knowledge Imparted Modifier = ${currentProffessor.knowledgeOffset}</p>`;
 }
 
 //loads stats when page loads
