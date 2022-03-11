@@ -166,7 +166,7 @@ AllOptionOutputs = [Option1Outputs, Option2Outputs, Option3Outputs]
 const GroupQuestion = new Scenario(SceneString, Options, AllOptionOutputs)
 
 SceneString = "A student raises thier hand, and before you can call on them, blurts out an incredibly stupid question."
-Options = ["ignoreDisruption", "joke", "berate", "skimSlides", "drink"]
+Options = ["ignore", "joke", "berate", "skimSlides", "drink"]
 Option1Outputs = [
 "You ignore the student's interruption. Perhaps their peers will have something relevant to say.",
 "No, Patrick, Mayonnaise is not an instrument.",

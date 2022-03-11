@@ -227,7 +227,6 @@ const ignoreDisruption = (resource, char) =>
 {
 	resource.TeacherSanity -= 5 * char.profSanityOffset;
 	resource.TeacherHappiness -= 5 * char.profHappinessOffset;
-
 }
 
 
