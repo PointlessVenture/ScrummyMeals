@@ -7,7 +7,7 @@
 
 import Resources from "./modules/resources.mjs"
 import Character from "./modules/character.mjs"
-import {StudentDecentQuestion, StandardLecture, LullMoment} from "./modules/scenarios.mjs";
+import {StudentDecentQuestion, StandardLecture, LullMoment, LosingFocus, LateStudent, ConceptSlide, GroupQuestion, StupidQuestion, HardSlide} from "./modules/scenarios.mjs";
 import {getRandomInt} from "./modules/RNG.mjs";
 import Ending from "./modules/ending.mjs";
 
@@ -28,7 +28,7 @@ teachers.push(new Character("Brent Sitterly","./images/Brent_Sitterly.jfif", "Ob
 teachers.push(new Character("Wei Chen","./images/chen_wei.jpg", "Coding Standard", 1, 1.5, 0.5));
 teachers.push(new Character("Warren Sides","./images/WarrenSides.jpg", "Math!", 1, 1, 1.5, 1, 1, 1, 0.75));
 
-const sceneList = [StudentDecentQuestion, StandardLecture, LullMoment];
+const sceneList = [StudentDecentQuestion, StandardLecture, LullMoment, LosingFocus, LateStudent, ConceptSlide, GroupQuestion, StupidQuestion, HardSlide];
 
 //Current Character
 var currentProffessor;
