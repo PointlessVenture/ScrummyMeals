@@ -146,7 +146,7 @@ Option5Outputs = [
 "You bring up this slide, before taking a seat in your chair. You stare at the class. The class stares at you. This is a normal slide. You stare at the class. They stare back. This is hell."
 ]
 AllOptionOutputs = [Option1Outputs, Option2Outputs, Option3Outputs, Option4Outputs]
-const HardSlide = new Scenario(SceneString, Options, AllOptionOutputs)
+const ConceptSlide = new Scenario(SceneString, Options, AllOptionOutputs)
 
 SceneString = "You've got a thought exercise here for the students, but you don't want to hear every student's perspective. Perhaps you could create groups?"
 Options = ["allowAnyone", "assignGroups", "splitClass"]
@@ -190,10 +190,27 @@ Option5Outputs = [
 "You pop the top off of the Starbucks you had brought earlier. You inform the student that questions like those are the reason that you drink, and very clearly in view of everyone, add a dash of Bailey's to your coffee.",
 "You reach under your desk and produce, from the cooler you stashed under there, a Whiteclaw. You pop the top.\"Eyyy, my guy, I see you were hitting the good stuff last night too!\" You shout, taking a big drink."]
 AllOptionOutputs = [Option1Outputs, Option2Outputs, Option3Outputs, Option4Outputs, Option5Outputs]
-
 const StupidQuestion = new Scenario(SceneString, Options, AllOptionOutputs)
 
-export {StudentDecentQuestion, StandardLecture, LullMoment, LosingFocus, LateStudent, HardSlide, GroupQuestion, StupidQuestion}
+SceneString = "You've put a slide in with a concept that is quite hard to understand. Time for some explanation."
+Options = ["hardExplanation", "summarize", "tellToRead"]
+Option1Outputs = [
+"Without wasting time, you deep-dive into the topic at hand, iterating your point over and over, like a nested for loop, until the difficult concept is safely drilled into student's heads.",
+"You begin to explain in great detail, making sure the students take this tricky bit of knowledge to heart.",
+"You lecture with aplomb, covering the whiteboard in scrawls of formulas and extensive notes. The Lecture is draining, but effective."]
+Option2Outputs = [
+"You summarize the difficult concept. The students don't learn as much, but some noticably sigh with relief as you skip large swaths of small text.",
+"For the sake of your students, you summarize, hitting the key points the students need to know.",
+"Even made brief, this lecture is still draining, but at least this way it's tolerable."]
+Option3Outputs = [
+"You tell the students to read the slide. The whole class groans in unison and sets to work reading the slide, complete with it's 12 point font. Most don't bother.",
+"You tell the students to read the slide, sitting back in your chair as you watch your subjects slave over the board, helplessly coping the copious text.",
+"As you tell the students to read the slide, One student offers to read the slide aloud for those in the back. They are not a good orator, but hey, at least you didn't have to read it."]
+AllOptionOutputs = [Option1Outputs, Option2Outputs, Option3Outputs]
+
+const HardSlide = new Scenario(SceneString, Options, AllOptionOutputs)
+
+export {StudentDecentQuestion, StandardLecture, LullMoment, LosingFocus, LateStudent, ConceptSlide, GroupQuestion, StupidQuestion, HardSlide}
 
 /*
 SceneString = ""
