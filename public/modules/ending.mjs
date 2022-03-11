@@ -15,7 +15,13 @@ export default class Ending {
         if (stats.StudentSanity <= LOSS_VALUE)
             return this.sanityLoss();            
         if (stats.StudentEngagement <= LOSS_VALUE)
-            return this.engagementLoss();            
+            return this.engagementLoss();    
+        if (stats.TeacherHappiness <= LOSS_VALUE)
+            return this.ThappyLoss();
+        if (stats.TeacherSanity <= LOSS_VALUE)
+            return this.TsanityLoss();            
+        if (stats.TeacherEngagement <= LOSS_VALUE)
+            return this.TengagementLoss();          
         if (stats.KnowledgeImparted <= KNOWLEDGE_LOSS)
             return this.knowledgeLoss();            
         if (stats.BloodAlchoholContent >= BAC_LOSS)
@@ -45,6 +51,27 @@ export default class Ending {
         const text =
             "The room becomes abuzz with activity. The furious sound of keyboard clacks and mouse clicks assualt your ears. You look at the nearest students computer. He is playing"
             + "CSGO in offline mode. You look at another screen. A student is playing Minesweeper. You decide to end class early today. Everyone cheers.";
+
+        return text;
+    }
+
+    ThappyLoss = () => {
+        const text =
+            "In a fit of anger, you stomp out of the room, immediately running to Perry Hall to resign your position, effective immediately. You vow to never teach another class as long as you live.";
+
+        return text;
+    }
+
+    TsanityLoss = () => {
+        const text =
+            "The room starts spinning. Colors start bleeding into your field of vision as everything fades in and out of clarity. You swear you can see the face of the professors who have come before you" +
+            ", mocking you. When your vision returns, you awaken in a mental facility.";
+        return text;
+    }
+
+    TengagementLoss = () => {
+        const text =
+            "You sigh. This just isn't worth it. You tell the class you're ending early, and as they shuffle out, you pull your out your favorite beverage, contemplating where it all went wrong.";
 
         return text;
     }
