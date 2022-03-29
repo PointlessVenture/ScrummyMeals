@@ -1,6 +1,6 @@
 const {Resources} = require('../modules/resources.mjs');
 const {Character} = require('../modules/character.mjs');
-const {berate, readSlides, skimSlides, explain, explainSlides, reiterate, readNotes, helpStudents, relax, drink, allowAnyone, assignGroups, splitClass, joke, getAttention, ignore, yellAttention, tangent, explainNormal, basicExplanation, inDepthExplanation, dontExplain, yellLate, ignoreLate, slyComment, overexplain, hardExplanation, summarize, tellToRead, ignoreDisruption} = require("../modules/actions.mjs");
+const actions = require("../modules/actions.mjs");
 
 test('Berate', () => {
     const resourcesTest = new Resources(50);
@@ -10,7 +10,7 @@ test('Berate', () => {
     resourcesExpected.StudentHappiness -= 5;
     resourcesExpected.TeacherSanity += 10;
 
-    berate(resourcesTest, teacher);
+    actions.berate(resourcesTest, teacher);
 
     expect(JSON.stringify(resourcesTest)).toMatch(JSON.stringify(resourcesExpected));
 })
@@ -25,7 +25,7 @@ test('readSlides', () => {
 	resourcesExpected.TeacherEngagement += 10; 
 	resourcesExpected.KnowledgeImparted += 10;
 
-    readSlides(resourcesTest, teacher);
+    actions.readSlides(resourcesTest, teacher);
 
     expect(JSON.stringify(resourcesTest)).toMatch(JSON.stringify(resourcesExpected));
 })
