@@ -231,35 +231,4 @@ const ignoreDisruption = (resource, char) =>
 
 
 
-export {berate, readSlides, skimSlides, explain, explainSlides, reiterate, readNotes, helpStudents, relax, drink, allowAnyone, assignGroups, splitClass, joke, getAttention, ignore, yellAttention, tangent, explainNormal, basicExplanation, inDepthExplanation, dontExplain, yellLate, ignoreLate, slyComment, overexplain, hardExplanation, summarize, tellToRead, ignoreDisruption}
-
-window.berate = berate;
-window.readSlides = readSlides;
-window.skimSlides = skimSlides;
-window.explain = explain;
-window.explainSlides = explainSlides;
-window.reiterate = reiterate;
-window.readNotes = readNotes;
-window.helpStudents = helpStudents;
-window.relax = relax;
-window.drink = drink;
-window.allowAnyone = allowAnyone;
-window.assignGroups = assignGroups;
-window.splitClass = splitClass;
-window.joke = joke;
-window.getAttention = getAttention;
-window.ignore = ignore;
-window.yellAttention = yellAttention;
-window.tangent = tangent;
-window.explainNormal = explainNormal;
-window.basicExplanation = basicExplanation;
-window.inDepthExplanation = inDepthExplanation;
-window.dontExplain = dontExplain;
-window.yellLate = yellLate;
-window.ignoreLate = ignoreLate;
-window.slyComment = slyComment;
-window.overexplain = overexplain;
-window.hardExplanation = hardExplanation;
-window.summarize = summarize;
-window.tellToRead = tellToRead;
-window.ignoreDisruption = ignoreDisruption;
+module.exports = {berate, readSlides, skimSlides, explain, explainSlides, reiterate, readNotes, helpStudents, relax, drink, allowAnyone, assignGroups, splitClass, joke, getAttention, ignore, yellAttention, tangent, explainNormal, basicExplanation, inDepthExplanation, dontExplain, yellLate, ignoreLate, slyComment, overexplain, hardExplanation, summarize, tellToRead, ignoreDisruption}

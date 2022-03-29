@@ -1,11 +1,11 @@
-import {getRandomInt} from "./RNG.mjs";
+const {getRandomInt} = require("./RNG.mjs");
 
 const WIN_VALUE = 100;
 const LOSS_VALUE = 0;
 const KNOWLEDGE_LOSS = -20;
 const BAC_LOSS = 0.25;
 
-export default class Ending {
+class Ending {
 
     constructor () {};
 
@@ -110,3 +110,5 @@ export default class Ending {
         return text;
     }
 }
+
+module.exports = {Ending};

@@ -1,4 +1,4 @@
-export default class Resources
+class Resources
 {
     constructor(baseStats) {
         this.StudentHappiness = baseStats;
@@ -13,3 +13,5 @@ export default class Resources
         this.BloodAlchoholContent = 0;
     }
 }
+
+module.exports = {Resources};

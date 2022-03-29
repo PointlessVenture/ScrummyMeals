@@ -1,4 +1,4 @@
-export default class Character {
+class Character {
     constructor(name, image, abilityName, studentHappyOffset = 1, studentEngageOffset = 1, studentSanityOffset = 1, profHappyOffset = 1, profEngageOffset = 1, profSanityOffset = 1, knowledgeOffset = 1) {
         this.name = name;
         this.image = image;
@@ -12,3 +12,5 @@ export default class Character {
         this.knowledgeOffset = knowledgeOffset;
     }
 }
+
+module.exports = {Character};
