@@ -1,9 +1,4 @@
-const Scenario = require("scenario.mjs");
-
-SceneString = 
-Options = 
-
-AllOptionOutputs = [Option1Outputs, Option2Outputs, Option3Outputs]
+const {Scenario} = require('./scenario.mjs');
 
 const decentQuestion = new Scenario(
     "While you're lecturing, a student interrupts you to ask a completely reasonable and thoughtful question. They sound genuinely confused.",
@@ -24,6 +19,6 @@ const decentQuestion = new Scenario(
             "You take time to explain that that particular question is beyond the scope of the course, and thus the student will not need to worry about it."
         ]
     ]
-)
+);
 
-const StudentDecentQuestion = new Scenario(SceneString, Options, AllOptionOutputs)
+module.exports = {decentQuestion};

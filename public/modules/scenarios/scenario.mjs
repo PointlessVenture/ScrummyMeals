@@ -1,9 +1,9 @@
-const {getRandomInt} = require("../RNG.mjs");
+const rng = require('../random.mjs');
 
 class Scenario {
     constructor(scene, options, optionOutputs) {
         this.scene = scene;
-        this.option = options;
+        this.options = options;
         this.outputs = optionOutputs;
     }
     
@@ -15,9 +15,10 @@ class Scenario {
         return this.options;
     }
 
-    getOutputs(option) {
-        const options = this.ouputs[option];
-        return options[getRandomInt(this.outputs[option].length)];
+    getOutput(option) {
+        const options = this.outputs[option];
+        const rand = rng.getRandomInt(this.outputs[option].length);
+        return options[rand];
     }
 }
 

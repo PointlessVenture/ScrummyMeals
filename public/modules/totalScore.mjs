@@ -11,7 +11,7 @@ const calcTotalScore = (resources) => {
 
         sum += resources.KnowledgeImparted;
 
-        let total = resources.BloodAlchoholContent != 0 ? sum - (sum * resources.BloodAlchoholContent) : sum;
+        const total = resources.BloodAlchoholContent != 0 ? sum - (sum * resources.BloodAlchoholContent) : sum;
         return total;
 }
 

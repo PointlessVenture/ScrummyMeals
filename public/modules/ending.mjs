@@ -1,4 +1,4 @@
-const {getRandomInt} = require("./RNG.mjs");
+const rng = require("./random.mjs");
 
 const WIN_VALUE = 100;
 const LOSS_VALUE = 0;
@@ -83,7 +83,7 @@ class Ending {
     }
 
     bacLoss = () => {
-        const randInt = getRandomInt(3);
+        const randInt = rng.getRandomInt(3);
 
         const text = [
             "You wake up in a cart driving through the woods. \"Oh your finally awake...\" a voice says. You look around in distress. Thoughts of magic and dragons fill your mind."
