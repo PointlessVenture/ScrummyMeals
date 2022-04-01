@@ -1,5 +1,5 @@
 //testing scenario refactors
-const scenarios = require('../modules/scenarios/scenarios.mjs');
+const scenarios = require('../modules/scenarios/index.mjs');
 
 //mock rng to always return 0;
 jest.spyOn(require('../modules/random.mjs'), 'getRandomInt').mockReturnValue(0);
