@@ -10,6 +10,27 @@ class Character {
         this.profEngageOffset = profEngageOffset;
         this.profSanityOffset = profSanityOffset;
         this.knowledgeOffset = knowledgeOffset;
+        this._quips = {};
+    }
+
+    getQuip = (resources) =>{
+        if(resources.TeacherHappiness < 30) {
+            return this._quips['happiness'];
+        }
+
+        if(resources.TeacherSanity < 30) {
+            return this._quips['sanity'];
+        }
+
+        if(resources.TeacherEngagement < 30) {
+            return this._quips['engagement'];
+        }
+
+        return 'none';
+    }
+
+    setQuips = (quips) => {
+        this._quips = quips;
     }
 }
 
