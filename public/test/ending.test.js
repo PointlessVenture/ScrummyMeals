@@ -18,7 +18,7 @@ test('Test student happiness loss', () => {
 test('Test knowledge loss', () => {
     const text = "A student raises their hand. You pick on them. \"What class is this again?\" they ask. It is week 7.";
 
-    const resources =new Resources(50);
+    const resources = new Resources(50);
     resources.KnowledgeImparted = -20;
 
     let observed = ending.checkStats(resources);

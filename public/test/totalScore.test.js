@@ -1,7 +1,7 @@
 const {calcTotalScore} = require("../modules/totalScore.mjs");
 const {Resources} = require("../modules/resources.mjs");
 
-test('test total score positive negative', () => {  
+test('test total score negative', () => {  
     const resources = new Resources(30);
     resources.StudentSanity -= 10
 
