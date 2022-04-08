@@ -48,6 +48,8 @@ test("test popping and calling", () => {
     expectedResources.TeacherSanity += 10;
 
     const observedResources = new Resources(50);
+    //add a random action to verify that the correct action is popped
+    handleAction(Actions.basicExplanation);
     handleAction(Actions.berate);
     Actions[previousStack.pop()](observedResources, testCharacter);
 
